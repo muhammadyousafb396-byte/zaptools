@@ -88,18 +88,36 @@
     if(!q){msg.textContent='Enter a channel URL or handle.';return;}
     var url=q.startsWith('http')?q:'https://www.youtube.com/'+(q.startsWith('@')?q:'@'+q);
     msg.textContent='Fetching channel page…';out.style.display='none';
-    try{
-      var r=await fetch('https://corsproxy.io/?url='+encodeURIComponent(url));
-      if(!r.ok)throw 0;
-      var t=await r.text();
+    var proxies=[
+      'https://api.allorigins.win/raw?url=',
+      'https://corsproxy.io/?url=',
+      'https://api.codetabs.com/v1/proxy?quest='
+    ];
+    var fetched=null;
+    for(var pi=0;pi<proxies.length;pi++){
+      try{
+        msg.textContent='Fetching channel page… (try '+(pi+1)+'/'+proxies.length+')';
+        var r=await fetch(proxies[pi]+encodeURIComponent(url),{signal:AbortSignal.timeout(15000)});
+        if(!r.ok)continue;
+        var t=await r.text();
+        if(t&&t.length>5000&&t.indexOf('youtube')>-1){fetched=t;break;}
+      }catch(e){/* try next proxy */}
+    }
+    if(fetched){
+      var t=fetched;
       var name=(t.match(/<meta property="og:title" content="([^"]+)"/)||[])[1]||'Unknown channel';
       var desc=(t.match(/<meta property="og:description" content="([^"]+)"/)||[])[1]||'';
-      var sm=desc.match(/([\d.,]+[KMB]?)\s*subscribers/i);
+      var sm=desc.match(/([\d.,]+[KMB]?)\s*subscribers/i)
+        ||t.match(/"subscriberCountText":\{"accessibility":\{"accessibilityData":\{"label":"([\d.,]+[KMB]?)[^"]*subscribers/i)
+        ||t.match(/([\d,]+)\s*subscribers/i);
       var subs=sm?sm[1]:'not visible';
+      var d2=desc.replace(/</g,'&lt;').substring(0,200);
       out.style.display='block';
-      out.innerHTML='<strong>'+name.replace(/</g,'&lt;')+'</strong><br><span style="color:var(--muted)">Subscribers: <strong>'+subs+'</strong></span><br><small style="color:var(--muted)">Tip: copy the subscriber count into the eligibility calculator below.</small>';
+      out.innerHTML='<strong>'+name.replace(/</g,'&lt;')+'</strong><br><span style="color:var(--muted)">Subscribers: <strong>'+subs+'</strong></span>'+(d2?'<br><small style="color:var(--muted)">'+d2+'…</small>':'')+'<br><small style="color:var(--muted)">Tip: copy the subscriber count into the eligibility calculator below.</small>';
       msg.textContent='✓ Channel found.';
-    }catch(e){msg.textContent='✕ Could not fetch. YouTube may block the proxy — enter stats manually below.';}
+    }else{
+      msg.textContent='✕ Could not fetch — YouTube blocks all proxies right now. Enter stats manually below.';
+    }
   });
   function row(ok,label,detail){return '<li class="'+(ok?'pass':'fail')+'"><strong>'+label+'</strong> — '+detail+'</li>';}
   document.getElementById('ymCalc').addEventListener('click',function(){
