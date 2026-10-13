@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Compressor — Shrink MP4 Size Online Free</title>
+  <meta name="description" content="Free video compressor: shrink MP4/WebM files in your browser with adjustable quality. Private, no upload, no signup.">
+  <meta name="keywords" content="video compressor, compress mp4, reduce video size, shrink video online">
+  <meta property="og:title" content="Video Compressor — Shrink MP4 Size Online Free">
+  <meta property="og:description" content="Free video compressor: shrink MP4/WebM files in your browser with adjustable quality. Private, no upload, no signup.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://muhammadyousafb396-byte.github.io/zaptools/video-compressor/">
+  <meta property="og:image" content="https://muhammadyousafb396-byte.github.io/zaptools/assets/og-cover.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Video Compressor — Shrink MP4 Size Online Free">
+  <meta name="twitter:description" content="Free video compressor: shrink MP4/WebM files in your browser with adjustable quality. Private, no upload, no signup.">
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="canonical" href="https://muhammadyousafb396-byte.github.io/zaptools/video-compressor/">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="https://unpkg.com/@ffmpeg/ffmpeg@0.11.6/dist/ffmpeg.min.js"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://muhammadyousafb396-byte.github.io/zaptools/"},
+    {"@type":"ListItem","position":2,"name":"Video Compressor","item":"https://muhammadyousafb396-byte.github.io/zaptools/video-compressor/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long does compression take?","acceptedAnswer":{"@type":"Answer","text":"In-browser encoding is slower than desktop: roughly 1–3x the video length depending on your device and settings."}},{"@type":"Question","name":"What quality setting should I use?","acceptedAnswer":{"@type":"Answer","text":"CRF 28 is a great balance. Use 23 for near-original quality, 32+ for maximum size reduction."}},{"@type":"Question","name":"Is my video uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No — the video is processed locally with FFmpeg running in your browser."}},{"@type":"Question","name":"Why did it fail on a large file?","acceptedAnswer":{"@type":"Answer","text":"Browser memory limits apply. Keep videos under ~200 MB and close other tabs for best results."}}]}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7410698728762849" crossorigin="anonymous"></script>
+</head>
+<body>
+<header class="site-header"><div class="container nav-inner">
+  <a class="logo" href="../"><img src="../assets/logo.png" alt="ZapTools logo" width="34" height="34">
+ZapTools</a>
+  <nav class="nav-links" aria-label="Main navigation"><a href="../">Home</a><a href="../calculator/">Calculator</a><a href="../image-to-text/">OCR</a><a href="../image-converter/">Converter</a><a href="../seo-checker/">SEO Checker</a><a href="../about.html">About</a></nav>
+</div></header>
+<main>
+  <section class="tool-hero"><div class="container">
+    <h1>Video Compressor</h1>
+    <p>Shrink MP4 videos right in your browser — adjustable quality, fully private.</p>
+  </div></section>
+  <div class="container">
+    <p class="breadcrumb"><a href="../">Home</a> &rsaquo; Video Compressor</p>
+    <section class="tool-box" aria-label="Video Compressor tool">
+      <div class="field"><label for="vcFile">Upload a video (MP4/WebM, under ~200 MB)</label><input type="file" id="vcFile" accept="video/*"></div>
+      <div class="form-row" style="margin-top:12px">
+        <div class="field"><label for="vcCrf">Quality (CRF): <strong id="vcCrfVal">28</strong> <span style="color:var(--muted);font-weight:400">lower = better</span></label><input type="range" id="vcCrf" min="18" max="40" value="28"></div>
+        <div class="field"><label for="vcScale">Max width (px, 0 = keep)</label><select id="vcScale">
+          <option value="0">Original</option><option value="1280">1280 (HD)</option>
+          <option value="854">854 (SD)</option><option value="640">640 (small)</option>
+        </select></div>
+      </div>
+      <div class="form-row" style="margin-top:12px"><button class="btn btn-grad" id="vcGo">🗜️ Compress Video</button></div>
+      <p class="status" id="vcMsg"></p>
+      <div class="result-box" id="vcProg" style="display:none"><div style="background:var(--border);border-radius:8px;height:14px;overflow:hidden"><div id="vcBar" style="height:100%;width:0;background:linear-gradient(90deg,#4f46e5,#7c3aed)"></div></div><p class="status" id="vcPct" style="margin-top:6px">0%</p></div>
+      <div class="result-box" id="vcOut" style="display:none;margin-top:12px"></div>
+    </section>
+    <div class="ad-slot">Advertisement</div>
+    <section class="prose">
+      <h2>How it works</h2>
+      <p>FFmpeg runs <strong>inside your browser</strong> to re-encode your video with H.264. Nothing is uploaded — your footage stays on your device. First run loads the encoder (~25 MB), then it's cached.</p>
+      <h3>Heads up</h3>
+      <p>Browser encoding is slower than desktop software — expect roughly 1–3× the video's length. Keep videos under ~200 MB and close heavy tabs for best results.</p>
+    </section>
+    <section class="faq"><h2 style="text-align:center;margin-bottom:16px">Frequently Asked Questions</h2><div class="prose">
+      <details><summary>How long does compression take?</summary><p>In-browser encoding is slower than desktop: roughly 1–3x the video length depending on your device and settings.</p></details>
+      <details><summary>What quality setting should I use?</summary><p>CRF 28 is a great balance. Use 23 for near-original quality, 32+ for maximum size reduction.</p></details>
+      <details><summary>Is my video uploaded anywhere?</summary><p>No — the video is processed locally with FFmpeg running in your browser.</p></details>
+      <details><summary>Why did it fail on a large file?</summary><p>Browser memory limits apply. Keep videos under ~200 MB and close other tabs for best results.</p></details>
+    </div></section>
+  </div>
+</main>
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div><div class="footer-logo"><img src="../assets/logo.png" alt="ZapTools logo" width="28" height="28">ZapTools</div><p style="font-size:.9rem">Free online tools that respect your privacy. Everything runs in your browser.</p></div>
+    <div><h4>Popular Tools</h4><a href="../">Currency Converter</a><a href="../calculator/">Scientific Calculator</a><a href="../age-calculator/">Age Calculator</a><a href="../bmi-calculator/">BMI Calculator</a></div>
+    <div><h4>More Tools</h4><a href="../word-counter/">Word Counter</a><a href="../password-generator/">Password Generator</a><a href="../qr-generator/">QR Generator</a><a href="../seo-checker/">SEO Checker</a></div>
+    <div><h4>Company</h4><a href="../about.html">About Us</a><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy Policy</a></div>
+  </div>
+  <div class="footer-bottom">&copy; <span data-year></span> ZapTools. All rights reserved.</div>
+</div></footer>
+<script src="../app.js"></script>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id);};
+  var ffmpeg=null,loaded=false;
+  function fmt(n){return n>1048576?(n/1048576).toFixed(2)+" MB":(n/1024).toFixed(1)+" KB";}
+  $("vcCrf").addEventListener("input",function(){$("vcCrfVal").textContent=this.value;});
+  $("vcGo").addEventListener("click",async function(){
+    var f=$("vcFile").files[0];
+    if(!f){$("vcMsg").textContent="Upload a video first.";return;}
+    if(f.size>220*1048576){$("vcMsg").textContent="⚠ File is large — browsers may run out of memory. Try a smaller file.";return;}
+    $("vcMsg").textContent="⏳ Loading video encoder (first time ~25 MB, then cached)…";
+    $("vcProg").style.display="block";$("vcOut").style.display="none";
+    try{
+      if(!loaded){
+        ffmpeg=FFmpeg.createFFmpeg({log:false});
+        ffmpeg.setProgress(function(p){var r=Math.round((p.ratio||0)*100);$("vcBar").style.width=r+"%";$("vcPct").textContent=r+"%";});
+        await ffmpeg.load();loaded=true;
+      }
+      $("vcMsg").textContent="⏳ Compressing… keep this tab open.";
+      var name="in_"+Date.now()+"."+(f.name.split(".").pop()||"mp4");
+      ffmpeg.FS("writeFile",name,await FFmpeg.fetchFile(f));
+      var crf=$("vcCrf").value,scale=$("vcScale").value;
+      var vf=scale!=="0"?["-vf","scale="+scale+":-2"]:[];
+      await ffmpeg.run("-i",name,"-c:v","libx264","-crf",crf,"-preset","veryfast","-c:a","aac","-b:a","128k","-movflags","+faststart").concat(vf).concat(["out.mp4"]);
+      var data=ffmpeg.FS("readFile","out.mp4");
+      ffmpeg.FS("unlink",name);ffmpeg.FS("unlink","out.mp4");
+      var blob=new Blob([data.buffer],{type:"video/mp4"});
+      var url=URL.createObjectURL(blob);
+      $("vcOut").style.display="block";
+      $("vcOut").innerHTML="Original: <strong>"+fmt(f.size)+"</strong> → Compressed: <strong>"+fmt(blob.size)+"</strong> ("+Math.round((1-blob.size/f.size)*100)+"% smaller)<br><br>"+
+        '<video controls style="max-width:100%;max-height:300px;border-radius:8px"><source src="'+url+'" type="video/mp4"></video><br><br>'+
+        '<a class="btn btn-grad" href="'+url+'" download="zaptools-compressed.mp4">⬇️ Download Compressed MP4</a>';
+      $("vcMsg").textContent="✓ Done!";
+    }catch(e){
+      console.error(e);
+      $("vcMsg").textContent="✕ Compression failed — try a smaller video or a desktop browser.";
+    }
+  });
+})();
+</script>
+</body>
+</html>

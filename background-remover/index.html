@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Remover — Free AI Cutout Tool Online</title>
+  <meta name="description" content="Free background remover: erase photo backgrounds with AI in your browser. Download transparent PNGs — no signup, fully private.">
+  <meta name="keywords" content="background remover, remove bg, transparent background, photo cutout, ai background eraser">
+  <meta property="og:title" content="Background Remover — Free AI Cutout Tool Online">
+  <meta property="og:description" content="Free background remover: erase photo backgrounds with AI in your browser. Download transparent PNGs — no signup, fully private.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://muhammadyousafb396-byte.github.io/zaptools/background-remover/">
+  <meta property="og:image" content="https://muhammadyousafb396-byte.github.io/zaptools/assets/og-cover.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Background Remover — Free AI Cutout Tool Online">
+  <meta name="twitter:description" content="Free background remover: erase photo backgrounds with AI in your browser. Download transparent PNGs — no signup, fully private.">
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="canonical" href="https://muhammadyousafb396-byte.github.io/zaptools/background-remover/">
+  <link rel="stylesheet" href="../styles.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://muhammadyousafb396-byte.github.io/zaptools/"},
+    {"@type":"ListItem","position":2,"name":"Background Remover","item":"https://muhammadyousafb396-byte.github.io/zaptools/background-remover/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the background remover work?","acceptedAnswer":{"@type":"Answer","text":"An AI segmentation model runs entirely in your browser via WebAssembly. It detects the main subject and makes everything else transparent. Your photo never leaves your device."}},{"@type":"Question","name":"Why is the first run slow?","acceptedAnswer":{"@type":"Answer","text":"The AI model (~40 MB) downloads once on first use, then it's cached. Later removals are much faster."}},{"@type":"Question","name":"Is my photo uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Processing happens 100% locally in your browser — even the model runs on your device."}},{"@type":"Question","name":"What if it doesn't work in my browser?","acceptedAnswer":{"@type":"Answer","text":"The tool needs WebAssembly and WebGL. Use a recent Chrome, Edge, Firefox or Safari. If unsupported, you'll see a clear message."}}]}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7410698728762849" crossorigin="anonymous"></script>
+</head>
+<body>
+<header class="site-header"><div class="container nav-inner">
+  <a class="logo" href="../"><img src="../assets/logo.png" alt="ZapTools logo" width="34" height="34">
+ZapTools</a>
+  <nav class="nav-links" aria-label="Main navigation"><a href="../">Home</a><a href="../calculator/">Calculator</a><a href="../image-to-text/">OCR</a><a href="../image-converter/">Converter</a><a href="../seo-checker/">SEO Checker</a><a href="../about.html">About</a></nav>
+</div></header>
+<main>
+  <section class="tool-hero"><div class="container">
+    <h1>Background Remover</h1>
+    <p>Erase photo backgrounds with AI — right in your browser. Free, private, no signup.</p>
+  </div></section>
+  <div class="container">
+    <p class="breadcrumb"><a href="../">Home</a> &rsaquo; Background Remover</p>
+    <section class="tool-box" aria-label="Background Remover tool">
+      <div class="field"><label for="brFile">Upload a photo</label><input type="file" id="brFile" accept="image/*"></div>
+      <div class="form-row" style="margin-top:12px">
+        <button class="btn btn-grad" id="brGo">✂️ Remove Background</button>
+        <button class="btn btn-ghost" id="brClear">Clear</button>
+      </div>
+      <p class="status" id="brMsg"></p>
+      <div class="form-row" style="margin-top:14px;align-items:flex-start">
+        <div class="field" style="flex:1"><label>Original</label><div class="result-box" style="padding:8px;min-height:120px;display:flex;align-items:center;justify-content:center"><img id="brOrig" alt="Original photo preview" style="max-width:100%;max-height:320px;display:none;border-radius:8px"></div></div>
+        <div class="field" style="flex:1"><label>Background removed</label><div class="result-box" style="padding:8px;min-height:120px;display:flex;align-items:center;justify-content:center;background-image:linear-gradient(45deg,#e5e7eb 25%,transparent 25%),linear-gradient(-45deg,#e5e7eb 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#e5e7eb 75%),linear-gradient(-45deg,transparent 75%,#e5e7eb 75%);background-size:20px 20px;background-position:0 0,0 10px,10px -10px,-10px 0"><img id="brOut" alt="Background removed result" style="max-width:100%;max-height:320px;display:none;border-radius:8px"></div></div>
+      </div>
+      <div class="form-row" style="margin-top:12px">
+        <button class="btn btn-grad" id="brDl" disabled>⬇️ Download Transparent PNG</button>
+      </div>
+      <p class="status" style="font-size:.85rem;color:var(--muted)">First run downloads the AI model (~40 MB) once, then it's cached. Works best on photos with a clear main subject.</p>
+    </section>
+    <div class="ad-slot">Advertisement</div>
+    <section class="prose">
+      <h2>How it works</h2>
+      <p>An AI segmentation model runs <strong>entirely in your browser</strong> using WebAssembly — it detects the main subject of your photo and makes the background transparent. Your image never leaves your device, so it's completely private.</p>
+      <h3>Tips for best results</h3>
+      <p>Use photos with a clear, well-lit subject and a contrasting background. Portraits, products and pets work best. Very busy or low-contrast backgrounds may need a second look.</p>
+    </section>
+    <section class="faq"><h2 style="text-align:center;margin-bottom:16px">Frequently Asked Questions</h2><div class="prose">
+      <details><summary>How does the background remover work?</summary><p>An AI segmentation model runs entirely in your browser via WebAssembly. It detects the main subject and makes everything else transparent. Your photo never leaves your device.</p></details>
+      <details><summary>Why is the first run slow?</summary><p>The AI model (~40 MB) downloads once on first use, then it's cached. Later removals are much faster.</p></details>
+      <details><summary>Is my photo uploaded anywhere?</summary><p>No. Processing happens 100% locally in your browser — even the model runs on your device.</p></details>
+      <details><summary>What if it doesn't work in my browser?</summary><p>The tool needs WebAssembly and WebGL. Use a recent Chrome, Edge, Firefox or Safari. If unsupported, you'll see a clear message.</p></details>
+    </div></section>
+  </div>
+</main>
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div><div class="footer-logo"><img src="../assets/logo.png" alt="ZapTools logo" width="28" height="28">ZapTools</div><p style="font-size:.9rem">Free online tools that respect your privacy. Everything runs in your browser.</p></div>
+    <div><h4>Popular Tools</h4><a href="../">Currency Converter</a><a href="../calculator/">Scientific Calculator</a><a href="../age-calculator/">Age Calculator</a><a href="../bmi-calculator/">BMI Calculator</a></div>
+    <div><h4>More Tools</h4><a href="../word-counter/">Word Counter</a><a href="../password-generator/">Password Generator</a><a href="../qr-generator/">QR Generator</a><a href="../seo-checker/">SEO Checker</a></div>
+    <div><h4>Company</h4><a href="../about.html">About Us</a><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy Policy</a></div>
+  </div>
+  <div class="footer-bottom">&copy; <span data-year></span> ZapTools. All rights reserved.</div>
+</div></footer>
+<script src="../app.js"></script>
+<script type="module">
+(function(){
+  var $=function(id){return document.getElementById(id);};
+  var fileObj=null,resultBlob=null,remover=null;
+  function msg(t){$("brMsg").textContent=t;}
+  function supported(){
+    try{
+      return typeof WebAssembly!=="undefined"&&!!document.createElement("canvas").getContext("webgl");
+    }catch(e){return false;}
+  }
+  $("brFile").addEventListener("change",function(){
+    var f=this.files[0];if(!f)return;
+    fileObj=f;resultBlob=null;$("brDl").disabled=true;
+    var url=URL.createObjectURL(f);
+    var img=$("brOrig");img.src=url;img.style.display="block";
+    $("brOut").style.display="none";
+    msg("✓ Photo loaded — click Remove Background.");
+  });
+  $("brGo").addEventListener("click",async function(){
+    if(!fileObj){msg("Upload a photo first.");return;}
+    if(!supported()){msg("✕ Your browser doesn't support WebAssembly/WebGL, which this tool needs. Try recent Chrome, Edge, Firefox or Safari.");return;}
+    msg("⏳ Loading AI model (first time ~40 MB, then cached)…");
+    $("brGo").disabled=true;
+    try{
+      if(!remover){
+        var mod=await import("https://cdn.jsdelivr.net/npm/@imgly/background-removal-js@1.5.5/dist/index.mjs");
+        remover=mod.removeBackground;
+      }
+      msg("⏳ Removing background — this can take 10–60 seconds…");
+      var config={
+        progress:function(key,current,total){
+          var pct=total?Math.round(current/total*100):0;
+          msg("⏳ "+key+": "+pct+"%");
+        }
+      };
+      resultBlob=await remover(fileObj,config);
+      var url=URL.createObjectURL(resultBlob);
+      var out=$("brOut");out.src=url;out.style.display="block";
+      $("brDl").disabled=false;
+      msg("✓ Done! Download your transparent PNG below.");
+    }catch(e){
+      console.error(e);
+      msg("✕ Removal failed: "+(e&&e.message?e.message:"unknown error")+". Try a smaller photo or a different browser.");
+    }finally{
+      $("brGo").disabled=false;
+    }
+  });
+  $("brDl").addEventListener("click",function(){
+    if(!resultBlob)return;
+    var a=document.createElement("a");
+    a.href=URL.createObjectURL(resultBlob);
+    a.download="zaptools-no-background.png";a.click();
+    setTimeout(function(){URL.revokeObjectURL(a.href);},2000);
+  });
+  $("brClear").addEventListener("click",function(){
+    fileObj=null;resultBlob=null;$("brFile").value="";
+    $("brOrig").style.display="none";$("brOut").style.display="none";
+    $("brDl").disabled=true;msg("");
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF Tools — Merge, Images to PDF, Extract Text</title>
+  <meta name="description" content="Free PDF tools: merge PDFs, convert images to PDF, extract text — all in your browser, private, no signup.">
+  <meta name="keywords" content="pdf tools, merge pdf, images to pdf, extract text from pdf, pdf page count">
+  <meta property="og:title" content="PDF Tools — Merge, Images to PDF, Extract Text">
+  <meta property="og:description" content="Free PDF tools: merge PDFs, convert images to PDF, extract text — all in your browser, private, no signup.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://muhammadyousafb396-byte.github.io/zaptools/pdf-tools/">
+  <meta property="og:image" content="https://muhammadyousafb396-byte.github.io/zaptools/assets/og-cover.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="PDF Tools — Merge, Images to PDF, Extract Text">
+  <meta name="twitter:description" content="Free PDF tools: merge PDFs, convert images to PDF, extract text — all in your browser, private, no signup.">
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="canonical" href="https://muhammadyousafb396-byte.github.io/zaptools/pdf-tools/">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://muhammadyousafb396-byte.github.io/zaptools/"},
+    {"@type":"ListItem","position":2,"name":"PDF Tools","item":"https://muhammadyousafb396-byte.github.io/zaptools/pdf-tools/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is there a page or size limit for merging?","acceptedAnswer":{"@type":"Answer","text":"Browser memory is the limit — merging a dozen typical PDFs works smoothly."}},{"@type":"Question","name":"Are my PDFs uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. All PDF processing happens locally in your browser."}},{"@type":"Question","name":"Can I reorder pages before merging?","acceptedAnswer":{"@type":"Answer","text":"Files merge in the order selected. To reorder, select them in your desired order."}},{"@type":"Question","name":"Does text extraction keep formatting?","acceptedAnswer":{"@type":"Answer","text":"Plain text is extracted in reading order; complex layouts may lose columns and tables."}}]}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7410698728762849" crossorigin="anonymous"></script>
+</head>
+<body>
+<header class="site-header"><div class="container nav-inner">
+  <a class="logo" href="../"><img src="../assets/logo.png" alt="ZapTools logo" width="34" height="34">
+ZapTools</a>
+  <nav class="nav-links" aria-label="Main navigation"><a href="../">Home</a><a href="../calculator/">Calculator</a><a href="../image-to-text/">OCR</a><a href="../image-converter/">Converter</a><a href="../seo-checker/">SEO Checker</a><a href="../about.html">About</a></nav>
+</div></header>
+<main>
+  <section class="tool-hero"><div class="container">
+    <h1>PDF Tools</h1>
+    <p>Merge PDFs, turn images into a PDF, extract text — free and private.</p>
+  </div></section>
+  <div class="container">
+    <p class="breadcrumb"><a href="../">Home</a> &rsaquo; PDF Tools</p>
+    <section class="tool-box" aria-label="PDF Tools">
+      <h3>📎 Merge PDFs</h3>
+      <div class="field"><label for="pdfMerge">Select PDF files (in merge order)</label><input type="file" id="pdfMerge" accept=".pdf" multiple></div>
+      <div class="form-row" style="margin-top:12px"><button class="btn btn-grad" id="pdfMergeGo">📎 Merge & Download</button></div>
+      <p class="status" id="pdfMergeMsg"></p>
+      <h3 style="margin-top:22px">🖼️ Images → PDF</h3>
+      <div class="field"><label for="pdfImgs">Select images (in page order)</label><input type="file" id="pdfImgs" accept="image/*" multiple></div>
+      <div class="form-row" style="margin-top:12px"><button class="btn btn-grad" id="pdfImgsGo">🖼️ Create PDF</button></div>
+      <p class="status" id="pdfImgsMsg"></p>
+      <h3 style="margin-top:22px">📝 Extract Text from PDF</h3>
+      <div class="field"><label for="pdfText">Select a PDF</label><input type="file" id="pdfText" accept=".pdf"></div>
+      <div class="form-row" style="margin-top:12px"><button class="btn btn-grad" id="pdfTextGo">📝 Extract Text</button></div>
+      <p class="status" id="pdfTextMsg"></p>
+      <div class="field" style="margin-top:8px"><label for="pdfTextOut">Extracted text</label><textarea id="pdfTextOut" rows="7" readonly placeholder="Extracted text will appear here…"></textarea></div>
+      <div class="form-row" style="margin-top:12px"><button class="btn btn-ghost" id="pdfTextDl">⬇️ Download .txt</button></div>
+    </section>
+    <div class="ad-slot">Advertisement</div>
+    <section class="prose">
+      <h2>Everyday PDF tasks, solved</h2>
+      <p>Combine contracts, turn scanned photos into one document, or pull text out of a PDF — without installing anything or uploading files to a server.</p>
+      <h3>Privacy first</h3>
+      <p>PDFs can contain sensitive data. Everything here runs locally in your browser, so your documents never leave your device.</p>
+    </section>
+    <section class="faq"><h2 style="text-align:center;margin-bottom:16px">Frequently Asked Questions</h2><div class="prose">
+      <details><summary>Is there a page or size limit for merging?</summary><p>Browser memory is the limit — merging a dozen typical PDFs works smoothly.</p></details>
+      <details><summary>Are my PDFs uploaded anywhere?</summary><p>No. All PDF processing happens locally in your browser.</p></details>
+      <details><summary>Can I reorder pages before merging?</summary><p>Files merge in the order selected. To reorder, select them in your desired order.</p></details>
+      <details><summary>Does text extraction keep formatting?</summary><p>Plain text is extracted in reading order; complex layouts may lose columns and tables.</p></details>
+    </div></section>
+  </div>
+</main>
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div><div class="footer-logo"><img src="../assets/logo.png" alt="ZapTools logo" width="28" height="28">ZapTools</div><p style="font-size:.9rem">Free online tools that respect your privacy. Everything runs in your browser.</p></div>
+    <div><h4>Popular Tools</h4><a href="../">Currency Converter</a><a href="../calculator/">Scientific Calculator</a><a href="../age-calculator/">Age Calculator</a><a href="../bmi-calculator/">BMI Calculator</a></div>
+    <div><h4>More Tools</h4><a href="../word-counter/">Word Counter</a><a href="../password-generator/">Password Generator</a><a href="../qr-generator/">QR Generator</a><a href="../seo-checker/">SEO Checker</a></div>
+    <div><h4>Company</h4><a href="../about.html">About Us</a><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy Policy</a></div>
+  </div>
+  <div class="footer-bottom">&copy; <span data-year></span> ZapTools. All rights reserved.</div>
+</div></footer>
+<script src="../app.js"></script>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id);};
+  function dlBlob(blob,name){var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(function(){URL.revokeObjectURL(a.href);},2000);}
+  // MERGE
+  $("pdfMergeGo").addEventListener("click",async function(){
+    var files=$("pdfMerge").files;
+    if(!files.length){$("pdfMergeMsg").textContent="Select at least one PDF.";return;}
+    if(typeof PDFLib==="undefined"){$("pdfMergeMsg").textContent="✕ PDF library failed to load. Check connection and retry.";return;}
+    $("pdfMergeMsg").textContent="Merging "+files.length+" PDF(s)…";
+    try{
+      var out=await PDFLib.PDFDocument.create();
+      for(var i=0;i<files.length;i++){
+        var buf=await files[i].arrayBuffer();
+        var src=await PDFLib.PDFDocument.load(buf,{ignoreEncryption:true});
+        var pages=await out.copyPages(src,src.getPageIndices());
+        pages.forEach(function(p){out.addPage(p);});
+      }
+      var bytes=await out.save();
+      dlBlob(new Blob([bytes],{type:"application/pdf"}),"zaptools-merged.pdf");
+      $("pdfMergeMsg").textContent="✓ Merged PDF downloaded ("+out.getPageCount()+" pages).";
+    }catch(e){$("pdfMergeMsg").textContent="✕ Merge failed — a file may be corrupted or encrypted.";}
+  });
+  // IMAGES -> PDF
+  $("pdfImgsGo").addEventListener("click",async function(){
+    var files=$("pdfImgs").files;
+    if(!files.length){$("pdfImgsMsg").textContent="Select at least one image.";return;}
+    if(typeof window.jspdf==="undefined"){$("pdfImgsMsg").textContent="✕ PDF library failed to load. Check connection and retry.";return;}
+    $("pdfImgsMsg").textContent="Building PDF from "+files.length+" image(s)…";
+    try{
+      var doc=new window.jspdf.jsPDF();
+      for(var i=0;i<files.length;i++){
+        var dataUrl=await new Promise(function(res,rej){var r=new FileReader();r.onload=function(){res(r.result);};r.onerror=rej;r.readAsDataURL(files[i]);});
+        var img=await new Promise(function(res,rej){var im=new Image();im.onload=function(){res(im);};im.onerror=rej;im.src=dataUrl;});
+        var fmt=files[i].type.indexOf("png")>-1?"PNG":"JPEG";
+        var pw=doc.internal.pageSize.getWidth(),ph=doc.internal.pageSize.getHeight();
+        var ratio=Math.min(pw/img.width,ph/img.height),w=img.width*ratio,h=img.height*ratio;
+        if(i>0)doc.addPage();
+        doc.addImage(dataUrl,fmt,(pw-w)/2,(ph-h)/2,w,h);
+      }
+      doc.save("zaptools-images.pdf");
+      $("pdfImgsMsg").textContent="✓ PDF downloaded.";
+    }catch(e){$("pdfImgsMsg").textContent="✕ Failed — try smaller images.";}
+  });
+  // EXTRACT TEXT
+  $("pdfTextGo").addEventListener("click",async function(){
+    var f=$("pdfText").files[0];
+    if(!f){$("pdfTextMsg").textContent="Select a PDF.";return;}
+    if(typeof pdfjsLib==="undefined"){$("pdfTextMsg").textContent="✕ PDF library failed to load. Check connection and retry.";return;}
+    $("pdfTextMsg").textContent="Extracting text…";
+    try{
+      pdfjsLib.GlobalWorkerOptions.workerSrc="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+      var buf=await f.arrayBuffer();
+      var pdf=await pdfjsLib.getDocument({data:buf}).promise;
+      var full="";
+      for(var p=1;p<=pdf.numPages;p++){
+        var page=await pdf.getPage(p);
+        var tc=await page.getTextContent();
+        full+=tc.items.map(function(it){return it.str;}).join(" ")+"\n\n";
+        $("pdfTextMsg").textContent="Extracting… page "+p+"/"+pdf.numPages;
+      }
+      $("pdfTextOut").value=full.trim();
+      $("pdfTextMsg").textContent="✓ Extracted from "+pdf.numPages+" page(s).";
+    }catch(e){$("pdfTextMsg").textContent="✕ Extraction failed — the PDF may be scanned images (no text layer).";}
+  });
+  $("pdfTextDl").addEventListener("click",function(){
+    var t=$("pdfTextOut").value;if(!t)return;
+    dlBlob(new Blob([t],{type:"text/plain"}),"zaptools-pdf-text.txt");
+  });
+})();
+</script>
+</body>
+</html>

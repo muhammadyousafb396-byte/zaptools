@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Summarizer & Rewriter — Summarize, Simplify, Improve</title>
+  <meta name="description" content="Free text summarizer: extract key sentences, simplify with plain words, or polish grammar — 100% private, runs in your browser.">
+  <meta name="keywords" content="text summarizer, article summarizer, text rewriter, simplify text, improve writing">
+  <meta property="og:title" content="Text Summarizer & Rewriter — Summarize, Simplify, Improve">
+  <meta property="og:description" content="Free text summarizer: extract key sentences, simplify with plain words, or polish grammar — 100% private, runs in your browser.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://muhammadyousafb396-byte.github.io/zaptools/text-summarizer/">
+  <meta property="og:image" content="https://muhammadyousafb396-byte.github.io/zaptools/assets/og-cover.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Text Summarizer & Rewriter — Summarize, Simplify, Improve">
+  <meta name="twitter:description" content="Free text summarizer: extract key sentences, simplify with plain words, or polish grammar — 100% private, runs in your browser.">
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="canonical" href="https://muhammadyousafb396-byte.github.io/zaptools/text-summarizer/">
+  <link rel="stylesheet" href="../styles.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://muhammadyousafb396-byte.github.io/zaptools/"},
+    {"@type":"ListItem","position":2,"name":"Text Summarizer & Rewriter","item":"https://muhammadyousafb396-byte.github.io/zaptools/text-summarizer/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the summarizer work?","acceptedAnswer":{"@type":"Answer","text":"It is a smart extractive summarizer: it scores every sentence by keyword frequency and position, then keeps the top-scoring sentences in original order. Nothing is sent to a server."}},{"@type":"Question","name":"What does Simplify mode do?","acceptedAnswer":{"@type":"Answer","text":"It replaces formal or complex words with simpler everyday alternatives from a built-in dictionary and splits very long sentences."}},{"@type":"Question","name":"Is my text uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. All processing happens locally in your browser — your text never leaves your device."}},{"@type":"Question","name":"Can it rewrite like AI paraphrasers?","acceptedAnswer":{"@type":"Answer","text":"It improves and simplifies deterministically. For deep creative rewriting, use a large language model; this tool is best for fast, private summaries."}}]}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7410698728762849" crossorigin="anonymous"></script>
+</head>
+<body>
+<header class="site-header"><div class="container nav-inner">
+  <a class="logo" href="../"><img src="../assets/logo.png" alt="ZapTools logo" width="34" height="34">
+ZapTools</a>
+  <nav class="nav-links" aria-label="Main navigation"><a href="../">Home</a><a href="../calculator/">Calculator</a><a href="../image-to-text/">OCR</a><a href="../image-converter/">Converter</a><a href="../seo-checker/">SEO Checker</a><a href="../about.html">About</a></nav>
+</div></header>
+<main>
+  <section class="tool-hero"><div class="container">
+    <h1>Text Summarizer & Rewriter</h1>
+    <p>Smart extractive summarizer, simplifier and writing polisher — free, private, instant.</p>
+  </div></section>
+  <div class="container">
+    <p class="breadcrumb"><a href="../">Home</a> &rsaquo; Text Summarizer & Rewriter</p>
+    <section class="tool-box" aria-label="Text Summarizer tool">
+      <div class="field"><label for="tsText">Paste your text</label><textarea id="tsText" rows="9" placeholder="Paste an article, essay or long paragraph here…"></textarea></div>
+      <div class="form-row" style="margin-top:12px">
+        <div class="field"><label for="tsMode">Mode</label><select id="tsMode">
+          <option value="summarize">📝 Summarize (key sentences)</option>
+          <option value="simplify">🪶 Simplify (plain words)</option>
+          <option value="improve">✨ Improve (grammar & polish)</option>
+        </select></div>
+        <div class="field"><label for="tsLen">Summary length: <strong id="tsLenVal">5</strong> sentences</label><input type="range" id="tsLen" min="3" max="10" value="5"></div>
+      </div>
+      <div class="form-row" style="margin-top:12px">
+        <button class="btn btn-grad" id="tsGo">⚡ Process Text</button>
+        <button class="btn btn-ghost" id="tsClear">Clear</button>
+      </div>
+      <p class="status" id="tsMsg"></p>
+      <div class="field" style="margin-top:8px"><label for="tsOut">Result</label><textarea id="tsOut" rows="7" readonly placeholder="Your result will appear here…"></textarea></div>
+      <div class="form-row" style="margin-top:12px">
+        <button class="btn btn-grad" id="tsCopy">📋 Copy Result</button>
+        <button class="btn btn-ghost" id="tsDl">⬇️ Download .txt</button>
+      </div>
+      <div class="result-box" id="tsStats" style="margin-top:14px">Stats will appear after processing…</div>
+    </section>
+    <div class="ad-slot">Advertisement</div>
+    <section class="prose">
+      <h2>How it works</h2>
+      <p>This is a <strong>smart extractive summarizer</strong> — it scores every sentence by keyword frequency and position in the text, then keeps the highest-scoring sentences in their original order. Nothing is uploaded: all processing happens in your browser.</p>
+      <h3>The three modes</h3>
+      <p><strong>Summarize</strong> condenses long text to its most important sentences. <strong>Simplify</strong> swaps formal or complex words for plain everyday alternatives and breaks up very long sentences. <strong>Improve</strong> fixes double spaces, stray capitalization, missing sentence capitals and common typos.</p>
+    </section>
+    <section class="faq"><h2 style="text-align:center;margin-bottom:16px">Frequently Asked Questions</h2><div class="prose">
+      <details><summary>How does the summarizer work?</summary><p>It scores every sentence by keyword frequency and position, then keeps the top-scoring sentences in original order. Nothing is sent to a server.</p></details>
+      <details><summary>What does Simplify mode do?</summary><p>It replaces formal or complex words with simpler everyday alternatives from a built-in dictionary and splits very long sentences.</p></details>
+      <details><summary>Is my text uploaded anywhere?</summary><p>No. All processing happens locally in your browser — your text never leaves your device.</p></details>
+      <details><summary>Can it rewrite like AI paraphrasers?</summary><p>It improves and simplifies deterministically. For deep creative rewriting use a large language model; this tool is best for fast, private summaries.</p></details>
+    </div></section>
+  </div>
+</main>
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div><div class="footer-logo"><img src="../assets/logo.png" alt="ZapTools logo" width="28" height="28">ZapTools</div><p style="font-size:.9rem">Free online tools that respect your privacy. Everything runs in your browser.</p></div>
+    <div><h4>Popular Tools</h4><a href="../">Currency Converter</a><a href="../calculator/">Scientific Calculator</a><a href="../age-calculator/">Age Calculator</a><a href="../bmi-calculator/">BMI Calculator</a></div>
+    <div><h4>More Tools</h4><a href="../word-counter/">Word Counter</a><a href="../password-generator/">Password Generator</a><a href="../qr-generator/">QR Generator</a><a href="../seo-checker/">SEO Checker</a></div>
+    <div><h4>Company</h4><a href="../about.html">About Us</a><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy Policy</a></div>
+  </div>
+  <div class="footer-bottom">&copy; <span data-year></span> ZapTools. All rights reserved.</div>
+</div></footer>
+<script src="../app.js"></script>
+<script>
+(function(){
+  var STOP=new Set("a,an,the,and,or,but,if,then,else,when,while,of,at,by,for,with,about,into,through,during,before,after,above,below,to,from,up,down,in,out,on,off,over,under,again,further,once,here,there,all,any,both,each,few,more,most,other,some,such,no,nor,not,only,own,same,so,than,too,very,can,will,just,don,should,now,is,are,was,were,be,been,being,have,has,had,having,do,does,did,doing,would,could,ought,i,you,he,she,it,we,they,them,his,her,its,our,their,this,that,these,those,am,as,my,me".split(","));
+  var SYN={
+    "utilize":"use","utilization":"use","commence":"start","terminate":"end","purchase":"buy",
+    "obtain":"get","acquire":"get","require":"need","approximately":"about","approximately":"around",
+    "demonstrate":"show","indicate":"show","facilitate":"help","implement":"use","leverage":"use",
+    "numerous":"many","substantial":"big","significant":"big","individuals":"people","personnel":"staff",
+    "prior to":"before","subsequent to":"after","in order to":"to","due to the fact that":"because",
+    "in the event that":"if","at this point in time":"now","a large number of":"many",
+    "comprehensive":"full","consequently":"so","however":"but","nevertheless":"still",
+    "furthermore":"also","moreover":"also","additionally":"also","therefore":"so",
+    "approximately":"about","sufficient":"enough","assist":"help","endeavor":"try",
+    "commencement":"start","conclusion":"end","ascertain":"find out","enquire":"ask",
+    "purchase":"buy","remuneration":"pay","residence":"home","transportation":"transport"
+  };
+  function sentences(t){return (t.match(/[^.!?]+[.!?]+["']?|\S[^.!?]+$/g)||[]).map(function(s){return s.trim();}).filter(Boolean);}
+  function words(t){return (t.match(/\S+/g)||[]);}
+  function freqMap(sents){
+    var f={};
+    sents.forEach(function(s){
+      words(s.toLowerCase().replace(/[^a-z0-9\s]/g," ")).forEach(function(w){
+        if(w.length>3&&!STOP.has(w))f[w]=(f[w]||0)+1;
+      });
+    });
+    return f;
+  }
+  function scoreSentence(s,f,pos,total){
+    var sc=0;
+    words(s.toLowerCase().replace(/[^a-z0-9\s]/g," ")).forEach(function(w){if(f[w])sc+=f[w];});
+    if(pos===0)sc*=1.25;                       // lead bonus
+    if(pos===total-1)sc*=1.1;                  // closing bonus
+    return sc/Math.max(1,words(s).length);      // length-normalized
+  }
+  function summarize(text,n){
+    var sents=sentences(text);
+    if(sents.length<=n)return text;
+    var f=freqMap(sents);
+    var scored=sents.map(function(s,i){return {s:s,i:i,sc:scoreSentence(s,f,i,sents.length)};});
+    scored.sort(function(a,b){return b.sc-a.sc;});
+    var top=scored.slice(0,n).sort(function(a,b){return a.i-b.i;});
+    return top.map(function(o){return o.s;}).join(" ");
+  }
+  function simplify(text){
+    var out=text;
+    Object.keys(SYN).forEach(function(k){
+      out=out.replace(new RegExp("\\b"+k.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"\\b","gi"),SYN[k]);
+    });
+    // split very long sentences at commas
+    out=out.replace(/([^,;.!?]{90,}?),([^,;.!?]{40,}?[.!?])/g,"$1. $2");
+    return out;
+  }
+  function improve(text){
+    var out=text.replace(/[ \t]+/g," ").replace(/\s+\n/g,"\n").trim();
+    out=out.replace(/([.!?]\s+)([a-z])/g,function(m,p,c){return p+c.toUpperCase();});
+    out=out.charAt(0).toUpperCase()+out.slice(1);
+    out=out.replace(/\bi\b/g,"I").replace(/\s+([,.!?;:])/g,"$1");
+    out=out.replace(/([,.!?;:])([A-Za-z])/g,"$1 $2");
+    out=out.replace(/\.{3,}/g,"…");
+    return out;
+  }
+  var $=function(id){return document.getElementById(id);};
+  $("tsLen").addEventListener("input",function(){$("tsLenVal").textContent=this.value;});
+  $("tsGo").addEventListener("click",function(){
+    var t=$("tsText").value.trim(),msg=$("tsMsg");
+    if(!t){msg.textContent="Paste some text first.";return;}
+    var mode=$("tsMode").value,out;
+    if(mode==="summarize")out=summarize(t,parseInt($("tsLen").value,10));
+    else if(mode==="simplify")out=simplify(t);
+    else out=improve(t);
+    $("tsOut").value=out;
+    var ow=words(t).length,os=sentences(t).length,nw=words(out).length,ns=sentences(out).length;
+    var comp=ow?Math.round((1-nw/ow)*100):0;
+    $("tsStats").innerHTML="<strong>"+ow+"</strong> words · <strong>"+os+"</strong> sentences → "+
+      "<strong>"+nw+"</strong> words · <strong>"+ns+"</strong> sentences &nbsp;|&nbsp; 📉 "+comp+"% shorter";
+    msg.textContent="✓ Done.";
+  });
+  $("tsClear").addEventListener("click",function(){$("tsText").value="";$("tsOut").value="";$("tsMsg").textContent="";$("tsStats").textContent="Stats will appear after processing…";});
+  $("tsCopy").addEventListener("click",function(){
+    var o=$("tsOut");if(!o.value)return;o.select();
+    document.execCommand("copy");$("tsMsg").textContent="✓ Copied to clipboard.";
+  });
+  $("tsDl").addEventListener("click",function(){
+    var o=$("tsOut").value;if(!o)return;
+    var a=document.createElement("a");
+    a.href=URL.createObjectURL(new Blob([o],{type:"text/plain"}));
+    a.download="zaptools-result.txt";a.click();URL.revokeObjectURL(a.href);
+  });
+})();
+</script>
+</body>
+</html>

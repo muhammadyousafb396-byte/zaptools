@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Converter — TXT, CSV, JSON, DOCX, ZIP Online</title>
+  <meta name="description" content="Free all-in-one file converter: TXT, CSV, JSON, MD, HTML, DOCX to text, and create ZIP files — 100% private, runs in your browser.">
+  <meta name="keywords" content="file converter, txt to json, csv to json, docx to text, create zip online, document converter">
+  <meta property="og:title" content="File Converter — TXT, CSV, JSON, DOCX, ZIP Online">
+  <meta property="og:description" content="Free all-in-one file converter: TXT, CSV, JSON, MD, HTML, DOCX to text, and create ZIP files — 100% private, runs in your browser.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://muhammadyousafb396-byte.github.io/zaptools/file-converter/">
+  <meta property="og:image" content="https://muhammadyousafb396-byte.github.io/zaptools/assets/og-cover.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="File Converter — TXT, CSV, JSON, DOCX, ZIP Online">
+  <meta name="twitter:description" content="Free all-in-one file converter: TXT, CSV, JSON, MD, HTML, DOCX to text, and create ZIP files — 100% private, runs in your browser.">
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="canonical" href="https://muhammadyousafb396-byte.github.io/zaptools/file-converter/">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://muhammadyousafb396-byte.github.io/zaptools/"},
+    {"@type":"ListItem","position":2,"name":"File Converter","item":"https://muhammadyousafb396-byte.github.io/zaptools/file-converter/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which conversions are supported?","acceptedAnswer":{"@type":"Answer","text":"TXT, CSV, JSON, Markdown and HTML convert between each other fully; DOCX converts to plain text or HTML; and you can bundle any files into a ZIP."}},{"@type":"Question","name":"Can I convert XLSX or PPTX?","acceptedAnswer":{"@type":"Answer","text":"Paste table data to export it as CSV or JSON. Full XLSX/PPTX to PDF conversion needs desktop software like LibreOffice."}},{"@type":"Question","name":"Is my file uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No — every conversion runs locally in your browser. Files never leave your device."}},{"@type":"Question","name":"Is there a file size limit?","acceptedAnswer":{"@type":"Answer","text":"Browser memory is the only limit; files up to ~50 MB work smoothly."}}]}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7410698728762849" crossorigin="anonymous"></script>
+</head>
+<body>
+<header class="site-header"><div class="container nav-inner">
+  <a class="logo" href="../"><img src="../assets/logo.png" alt="ZapTools logo" width="34" height="34">
+ZapTools</a>
+  <nav class="nav-links" aria-label="Main navigation"><a href="../">Home</a><a href="../calculator/">Calculator</a><a href="../image-to-text/">OCR</a><a href="../image-converter/">Converter</a><a href="../seo-checker/">SEO Checker</a><a href="../about.html">About</a></nav>
+</div></header>
+<main>
+  <section class="tool-hero"><div class="container">
+    <h1>All-in-One File Converter</h1>
+    <p>Convert TXT, CSV, JSON, MD, HTML & DOCX — or bundle files into a ZIP. Private & free.</p>
+  </div></section>
+  <div class="container">
+    <p class="breadcrumb"><a href="../">Home</a> &rsaquo; File Converter</p>
+    <section class="tool-box" aria-label="File Converter tool">
+      <div class="field"><label for="fcFile">Upload a file</label><input type="file" id="fcFile" accept=".txt,.csv,.json,.md,.markdown,.html,.htm,.docx"></div>
+      <div class="form-row" style="margin-top:12px">
+        <div class="field"><label for="fcTarget">Convert to</label><select id="fcTarget">
+          <option value="txt">TXT — Plain text</option>
+          <option value="md">MD — Markdown</option>
+          <option value="html">HTML — Web page</option>
+          <option value="json">JSON — Data</option>
+          <option value="csv">CSV — Spreadsheet</option>
+        </select></div>
+        <div class="field" style="justify-content:flex-end"><button class="btn btn-grad" id="fcGo">⚡ Convert & Download</button></div>
+      </div>
+      <p class="status" id="fcMsg"></p>
+      <div class="field" style="margin-top:8px"><label>Preview</label><div class="result-box" id="fcPrev" style="max-height:260px;overflow:auto;white-space:pre-wrap;font-family:monospace;font-size:.85rem">Upload a file to see a preview…</div></div>
+      <h3 style="margin-top:22px">📦 Create a ZIP</h3>
+      <div class="field"><label for="fcZip">Select multiple files</label><input type="file" id="fcZip" multiple></div>
+      <div class="form-row" style="margin-top:12px"><button class="btn btn-grad" id="fcZipGo">📦 Download ZIP</button></div>
+      <p class="status" id="fcZipMsg"></p>
+    </section>
+    <div class="ad-slot">Advertisement</div>
+    <section class="prose">
+      <h2>Supported conversions</h2>
+      <p><strong>Text formats:</strong> TXT, CSV, JSON, Markdown and HTML convert between each other with smart parsing — CSV becomes a JSON table, JSON pretty-prints to readable text, Markdown renders to styled HTML.</p>
+      <h3>DOCX files</h3>
+      <p>Word documents convert to clean plain text or HTML. Complex formatting (embedded charts, SmartArt) may simplify — that's normal for any converter.</p>
+      <h3>XLSX / PPTX note</h3>
+      <p>Full spreadsheet and presentation conversion to PDF needs desktop software. Tip: copy a table from Excel and paste it here — choose CSV target to export it.</p>
+    </section>
+    <section class="faq"><h2 style="text-align:center;margin-bottom:16px">Frequently Asked Questions</h2><div class="prose">
+      <details><summary>Which conversions are supported?</summary><p>TXT, CSV, JSON, Markdown and HTML convert between each other fully; DOCX converts to plain text or HTML; and you can bundle any files into a ZIP.</p></details>
+      <details><summary>Can I convert XLSX or PPTX?</summary><p>Paste table data to export it as CSV or JSON. Full XLSX/PPTX to PDF conversion needs desktop software like LibreOffice.</p></details>
+      <details><summary>Is my file uploaded anywhere?</summary><p>No — every conversion runs locally in your browser. Files never leave your device.</p></details>
+      <details><summary>Is there a file size limit?</summary><p>Browser memory is the only limit; files up to ~50 MB work smoothly.</p></details>
+    </div></section>
+  </div>
+</main>
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div><div class="footer-logo"><img src="../assets/logo.png" alt="ZapTools logo" width="28" height="28">ZapTools</div><p style="font-size:.9rem">Free online tools that respect your privacy. Everything runs in your browser.</p></div>
+    <div><h4>Popular Tools</h4><a href="../">Currency Converter</a><a href="../calculator/">Scientific Calculator</a><a href="../age-calculator/">Age Calculator</a><a href="../bmi-calculator/">BMI Calculator</a></div>
+    <div><h4>More Tools</h4><a href="../word-counter/">Word Counter</a><a href="../password-generator/">Password Generator</a><a href="../qr-generator/">QR Generator</a><a href="../seo-checker/">SEO Checker</a></div>
+    <div><h4>Company</h4><a href="../about.html">About Us</a><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy Policy</a></div>
+  </div>
+  <div class="footer-bottom">&copy; <span data-year></span> ZapTools. All rights reserved.</div>
+</div></footer>
+<script src="../app.js"></script>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id);};
+  var rawText="",rawName="document";
+  function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+  function download(content,name,mime){
+    var a=document.createElement("a");
+    a.href=URL.createObjectURL(new Blob([content],{type:mime||"text/plain"}));
+    a.download=name;a.click();setTimeout(function(){URL.revokeObjectURL(a.href);},2000);
+  }
+  function parseCSV(t){
+    var rows=[],row=[],cell="",q=false;
+    for(var i=0;i<t.length;i++){var c=t[i];
+      if(q){if(c==='"'){if(t[i+1]==='"'){cell+='"';i++;}else q=false;}else cell+=c;}
+      else{if(c==='"')q=true;else if(c===","){row.push(cell);cell="";}
+        else if(c==="\n"||c==="\r"){if(cell!==""||row.length){row.push(cell);rows.push(row);row=[];cell="";}if(c==="\r"&&t[i+1]==="\n")i++;}
+        else cell+=c;}
+    }
+    if(cell!==""||row.length){row.push(cell);rows.push(row);}
+    return rows.filter(function(r){return r.length>1||r[0]!=="";});
+  }
+  function csvToJson(t){
+    var rows=parseCSV(t);if(!rows.length)return "[]";
+    var head=rows[0],out=[];
+    for(var i=1;i<rows.length;i++){var o={};for(var j=0;j<head.length;j++)o[head[j]||("col"+j)]=rows[i][j]||"";out.push(o);}
+    return JSON.stringify(out,null,2);
+  }
+  function jsonToText(t){
+    try{var o=JSON.parse(t);
+      if(Array.isArray(o)&&o.length&&typeof o[0]==="object"){
+        var keys=Object.keys(o[0]);
+        var lines=[keys.join(",")];
+        o.forEach(function(r){lines.push(keys.map(function(k){var v=String(r[k]==null?"":r[k]);return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;}).join(","));});
+        return lines.join("\n");
+      }
+      return JSON.stringify(o,null,2);
+    }catch(e){return t;}
+  }
+  function mdToHtml(t){
+    return esc(t)
+      .replace(/^###### (.*)$/gm,"<h6>$1</h6>").replace(/^##### (.*)$/gm,"<h5>$1</h5>")
+      .replace(/^#### (.*)$/gm,"<h4>$1</h4>").replace(/^### (.*)$/gm,"<h3>$1</h3>")
+      .replace(/^## (.*)$/gm,"<h2>$1</h2>").replace(/^# (.*)$/gm,"<h1>$1</h1>")
+      .replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>").replace(/\*(.+?)\*/g,"<em>$1</em>")
+      .replace(/`(.+?)`/g,"<code>$1</code>").replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2">$1</a>')
+      .replace(/^- (.*)$/gm,"<li>$1</li>").replace(/(<li>.*<\/li>\n?)+/g,"<ul>$&</ul>")
+      .replace(/\n\n/g,"</p><p>").replace(/^(.*)$/gm,"<p>$1</p>").replace(/<p><(h\d|ul|li)/g,"<$1").replace(/<\/(h\d|ul)><\/p>/g,"</$1>");
+  }
+  function htmlToText(t){
+    var d=document.createElement("div");d.innerHTML=t;
+    d.querySelectorAll("script,style").forEach(function(e){e.remove();});
+    return d.textContent.replace(/\n{3,}/g,"\n\n").trim();
+  }
+  function toTarget(text,ext,target){
+    var plain=(ext==="html"||ext==="htm")?htmlToText(text):text;
+    if(target==="txt")return {c:plain,m:"text/plain",e:"txt"};
+    if(target==="md")return {c:plain,m:"text/markdown",e:"md"};
+    if(target==="json"){
+      if(ext==="csv")return {c:csvToJson(text),m:"application/json",e:"json"};
+      try{return {c:JSON.stringify(JSON.parse(plain),null,2),m:"application/json",e:"json"};}
+      catch(e){return {c:JSON.stringify({text:plain},null,2),m:"application/json",e:"json"};}
+    }
+    if(target==="csv")return {c:jsonToText(plain),m:"text/csv",e:"csv"};
+    if(target==="html"){
+      var body=(ext==="md"||ext==="markdown")?mdToHtml(plain):esc(plain).replace(/\n/g,"<br>");
+      return {c:"<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>Converted</title></head><body>"+body+"</body></html>",m:"text/html",e:"html"};
+    }
+    return {c:plain,m:"text/plain",e:"txt"};
+  }
+  $("fcFile").addEventListener("change",function(){
+    var f=this.files[0];if(!f)return;
+    var ext=(f.name.split(".").pop()||"").toLowerCase();
+    rawName=f.name.replace(/\.[^.]+$/,"")||"document";
+    $("fcMsg").textContent="Reading "+f.name+"…";
+    if(ext==="docx"){
+      if(typeof mammoth==="undefined"){$("fcMsg").textContent="✕ DOCX library failed to load. Check connection and retry.";return;}
+      var rd=new FileReader();
+      rd.onload=function(){mammoth.extractRawText({arrayBuffer:rd.result}).then(function(r){
+        rawText=r.value;$("fcPrev").textContent=rawText.slice(0,1500);
+        $("fcMsg").textContent="✓ Ready — pick a target format and convert.";
+      }).catch(function(){$("fcMsg").textContent="✕ Could not read this DOCX.";});};
+      rd.readAsArrayBuffer(f);return;
+    }
+    var r2=new FileReader();
+    r2.onload=function(){rawText=r2.result;
+      if(ext==="csv")$("fcPrev").textContent=csvToJson(rawText).slice(0,1500);
+      else $("fcPrev").textContent=rawText.slice(0,1500);
+      $("fcMsg").textContent="✓ Ready — pick a target format and convert.";};
+    r2.readAsText(f);
+  });
+  $("fcGo").addEventListener("click",function(){
+    if(!rawText){$("fcMsg").textContent="Upload a file first.";return;}
+    var ext=($("fcFile").files[0].name.split(".").pop()||"").toLowerCase();
+    var target=$("fcTarget").value;
+    if(ext==="docx"&&target!=="txt"&&target!=="html"){$("fcMsg").textContent="DOCX converts to TXT or HTML only — pick one.";return;}
+    var r=toTarget(rawText,ext,target);
+    download(r.c,rawName+"."+r.e,r.m);
+    $("fcMsg").textContent="✓ Downloaded "+rawName+"."+r.e;
+  });
+  $("fcZipGo").addEventListener("click",function(){
+    var files=$("fcZip").files;
+    if(!files.length){$("fcZipMsg").textContent="Select at least one file.";return;}
+    if(typeof JSZip==="undefined"){$("fcZipMsg").textContent="✕ ZIP library failed to load. Check connection and retry.";return;}
+    $("fcZipMsg").textContent="Compressing "+files.length+" file(s)…";
+    var zip=new JSZip(),n=files.length,done=0;
+    Array.prototype.forEach.call(files,function(f){
+      var rd=new FileReader();
+      rd.onload=function(){zip.file(f.name,rd.result);done++;
+        if(done===n)zip.generateAsync({type:"blob"}).then(function(b){
+          var a=document.createElement("a");a.href=URL.createObjectURL(b);
+          a.download="zaptools-files.zip";a.click();
+          setTimeout(function(){URL.revokeObjectURL(a.href);},2000);
+          $("fcZipMsg").textContent="✓ ZIP downloaded.";
+        });};
+      rd.readAsArrayBuffer(f);
+    });
+  });
+})();
+</script>
+</body>
+</html>

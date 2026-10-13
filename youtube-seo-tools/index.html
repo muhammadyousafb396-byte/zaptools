@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube SEO Tools — Tags, Titles & Hashtags</title>
+  <meta name="description" content="Free YouTube SEO tools: tag generator, title analyzer, description templates and hashtag suggester to rank higher.">
+  <meta name="keywords" content="youtube seo tools, youtube tag generator, video title analyzer, youtube hashtags, youtube description template">
+  <meta property="og:title" content="YouTube SEO Tools — Tags, Titles & Hashtags">
+  <meta property="og:description" content="Free YouTube SEO tools: tag generator, title analyzer, description templates and hashtag suggester to rank higher.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://muhammadyousafb396-byte.github.io/zaptools/youtube-seo-tools/">
+  <meta property="og:image" content="https://muhammadyousafb396-byte.github.io/zaptools/assets/og-cover.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="YouTube SEO Tools — Tags, Titles & Hashtags">
+  <meta name="twitter:description" content="Free YouTube SEO tools: tag generator, title analyzer, description templates and hashtag suggester to rank higher.">
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="canonical" href="https://muhammadyousafb396-byte.github.io/zaptools/youtube-seo-tools/">
+  <link rel="stylesheet" href="../styles.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://muhammadyousafb396-byte.github.io/zaptools/"},
+    {"@type":"ListItem","position":2,"name":"YouTube SEO Tools","item":"https://muhammadyousafb396-byte.github.io/zaptools/youtube-seo-tools/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many tags should a YouTube video have?","acceptedAnswer":{"@type":"Answer","text":"YouTube allows 500 characters of tags. Use 10–15 focused tags: your main keyword first, then variations and related terms."}},{"@type":"Question","name":"What makes a good YouTube title?","acceptedAnswer":{"@type":"Answer","text":"Under 60 characters, keyword near the front, a curiosity hook or number, and no clickbait that the video doesn't deliver."}},{"@type":"Question","name":"Do hashtags help on YouTube?","acceptedAnswer":{"@type":"Answer","text":"The first 3 hashtags show above your title and aid discovery. Use 3–5 relevant ones; stuffing 15+ looks spammy."}},{"@type":"Question","name":"Should keywords go in the description?","acceptedAnswer":{"@type":"Answer","text":"Yes — the first 2–3 lines matter most (they show in search). Repeat your main keyword naturally 2–3 times in the full description."}}]}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7410698728762849" crossorigin="anonymous"></script>
+</head>
+<body>
+<header class="site-header"><div class="container nav-inner">
+  <a class="logo" href="../"><img src="../assets/logo.png" alt="ZapTools logo" width="34" height="34">
+ZapTools</a>
+  <nav class="nav-links" aria-label="Main navigation"><a href="../">Home</a><a href="../calculator/">Calculator</a><a href="../image-to-text/">OCR</a><a href="../image-converter/">Converter</a><a href="../seo-checker/">SEO Checker</a><a href="../about.html">About</a></nav>
+</div></header>
+<main>
+  <section class="tool-hero"><div class="container">
+    <h1>YouTube SEO Tools</h1>
+    <p>Tag generator, title analyzer, description templates & hashtag suggester.</p>
+  </div></section>
+  <div class="container">
+    <p class="breadcrumb"><a href="../">Home</a> &rsaquo; YouTube SEO Tools</p>
+    <section class="tool-box" aria-label="YouTube SEO Tools">
+      <h3>🏷️ Tag Generator</h3>
+      <div class="field"><label for="ysTopic">Video topic / main keyword</label><input type="text" id="ysTopic" placeholder="e.g. how to make biryani at home"></div>
+      <div class="form-row" style="margin-top:12px"><button class="btn btn-grad" id="ysTagsGo">🏷️ Generate Tags</button></div>
+      <div class="field" style="margin-top:8px"><label for="ysTagsOut">Tags (copy-paste ready)</label><textarea id="ysTagsOut" rows="4" readonly placeholder="Tags will appear here…"></textarea></div>
+      <div class="form-row" style="margin-top:8px"><button class="btn btn-ghost" id="ysTagsCopy">📋 Copy Tags</button></div>
+      <h3 style="margin-top:22px">📝 Title Analyzer</h3>
+      <div class="field"><label for="ysTitle">Video title</label><input type="text" id="ysTitle" placeholder="Paste your video title…" maxlength="120"></div>
+      <div class="form-row" style="margin-top:12px"><button class="btn btn-grad" id="ysTitleGo">📝 Analyze Title</button></div>
+      <div class="result-box" id="ysTitleOut" style="display:none;margin-top:10px"></div>
+      <h3 style="margin-top:22px">#️⃣ Hashtag Suggester</h3>
+      <div class="field"><label for="ysHash">Topic</label><input type="text" id="ysHash" placeholder="e.g. travel vlog"></div>
+      <div class="form-row" style="margin-top:12px"><button class="btn btn-grad" id="ysHashGo">#️⃣ Suggest Hashtags</button></div>
+      <div class="result-box" id="ysHashOut" style="display:none;margin-top:10px"></div>
+      <h3 style="margin-top:22px">📄 Description Template</h3>
+      <div class="field"><label for="ysDescTopic">Video topic</label><input type="text" id="ysDescTopic" placeholder="e.g. iPhone 16 review"></div>
+      <div class="field" style="margin-top:8px"><label for="ysChannel">Channel name</label><input type="text" id="ysChannel" placeholder="e.g. Tech Daily"></div>
+      <div class="form-row" style="margin-top:12px"><button class="btn btn-grad" id="ysDescGo">📄 Generate Description</button></div>
+      <div class="field" style="margin-top:8px"><label for="ysDescOut">Description</label><textarea id="ysDescOut" rows="8" readonly></textarea></div>
+      <div class="form-row" style="margin-top:8px"><button class="btn btn-ghost" id="ysDescCopy">📋 Copy Description</button></div>
+    </section>
+    <div class="ad-slot">Advertisement</div>
+    <section class="prose">
+      <h2>Rank higher on YouTube</h2>
+      <p>YouTube is the world's second-biggest search engine. The right <strong>title, tags, description and hashtags</strong> help the algorithm understand your video and show it to the right viewers.</p>
+      <h3>Quick wins</h3>
+      <p>Put your main keyword in the first 40 characters of the title, write 150+ word descriptions with timestamps, and use 3–5 hashtags. Then make the video deliver on the title's promise — watch time beats everything.</p>
+    </section>
+    <section class="faq"><h2 style="text-align:center;margin-bottom:16px">Frequently Asked Questions</h2><div class="prose">
+      <details><summary>How many tags should a YouTube video have?</summary><p>YouTube allows 500 characters of tags. Use 10–15 focused tags: your main keyword first, then variations and related terms.</p></details>
+      <details><summary>What makes a good YouTube title?</summary><p>Under 60 characters, keyword near the front, a curiosity hook or number, and no clickbait that the video doesn't deliver.</p></details>
+      <details><summary>Do hashtags help on YouTube?</summary><p>The first 3 hashtags show above your title and aid discovery. Use 3–5 relevant ones; stuffing 15+ looks spammy.</p></details>
+      <details><summary>Should keywords go in the description?</summary><p>Yes — the first 2–3 lines matter most (they show in search). Repeat your main keyword naturally 2–3 times in the full description.</p></details>
+    </div></section>
+  </div>
+</main>
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div><div class="footer-logo"><img src="../assets/logo.png" alt="ZapTools logo" width="28" height="28">ZapTools</div><p style="font-size:.9rem">Free online tools that respect your privacy. Everything runs in your browser.</p></div>
+    <div><h4>Popular Tools</h4><a href="../">Currency Converter</a><a href="../calculator/">Scientific Calculator</a><a href="../age-calculator/">Age Calculator</a><a href="../bmi-calculator/">BMI Calculator</a></div>
+    <div><h4>More Tools</h4><a href="../word-counter/">Word Counter</a><a href="../password-generator/">Password Generator</a><a href="../qr-generator/">QR Generator</a><a href="../seo-checker/">SEO Checker</a></div>
+    <div><h4>Company</h4><a href="../about.html">About Us</a><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy Policy</a></div>
+  </div>
+  <div class="footer-bottom">&copy; <span data-year></span> ZapTools. All rights reserved.</div>
+</div></footer>
+<script src="../app.js"></script>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id);};
+  var POWER=["secret","proven","ultimate","free","best","easy","new","how to","top","amazing","shocking","insane","epic","must","never","always","stop","why","what","truth"];
+  // TAGS
+  $("ysTagsGo").addEventListener("click",function(){
+    var t=$("ysTopic").value.trim().toLowerCase();
+    if(!t){return;}
+    var words=t.split(/\s+/);
+    var tags=[t];
+    words.forEach(function(w){if(w.length>2)tags.push(w);});
+    tags.push(t+" tutorial",t+" 2026","how to "+t,t+" tips",t+" guide","best "+t,t+" for beginners",t+" explained");
+    var seen={},out=[];
+    tags.forEach(function(g){g=g.trim();if(g&&!seen[g]){seen[g]=1;out.push(g);}});
+    out=out.slice(0,15);
+    $("ysTagsOut").value=out.join(", ");
+  });
+  $("ysTagsCopy").addEventListener("click",function(){
+    var o=$("ysTagsOut");if(!o.value)return;o.select();document.execCommand("copy");
+  });
+  // TITLE ANALYZER
+  function row(ok,label,detail){return '<li class="'+(ok?"pass":"fail")+'"><strong>'+label+'</strong> — '+detail+'</li>';}
+  $("ysTitleGo").addEventListener("click",function(){
+    var t=$("ysTitle").value.trim(),out=$("ysTitleOut");
+    if(!t){out.style.display="none";return;}
+    var len=t.length,lenOk=len>0&&len<=60;
+    var words=t.toLowerCase().split(/\s+/);
+    var kwFront=words.slice(0,3).join(" ").length>0;
+    var pw=POWER.filter(function(p){return t.toLowerCase().indexOf(p)>-1;});
+    var hasNum=/\d/.test(t);
+    var hasQ=/\?/.test(t);
+    var caps=(t.match(/[A-Z]/g)||[]).length;
+    var capsOk=caps<=Math.ceil(t.replace(/[^A-Za-z]/g,"").length*0.4);
+    var score=0;
+    if(lenOk)score+=25;if(kwFront)score+=15;if(pw.length)score+=20;if(hasNum)score+=15;if(hasQ)score+=10;if(capsOk)score+=15;
+    out.style.display="block";
+    out.innerHTML='<div style="font-size:1.25rem;font-weight:800;margin-bottom:8px">Score: '+score+'/100 '+(score>=75?"🟢":score>=50?"🟡":"🔴")+'</div><ul class="check-list">'+
+      row(lenOk,"Length ≤ 60 chars",len+" characters"+(len>60?" — too long, will truncate":""))+
+      row(kwFront,"Keyword near front","main topic in first 3 words")+
+      row(pw.length>0,"Power word",pw.length?('"'+pw[0]+'" found'):"add: ultimate, secret, proven, how to…")+
+      row(hasNum,"Number","digits boost CTR")+
+      row(hasQ||hasNum,"Hook","question or number present")+
+      row(capsOk,"No ALL-CAPS shouting",capsOk?"good":"too many capitals")+
+      "</ul>";
+  });
+  // HASHTAGS
+  $("ysHashGo").addEventListener("click",function(){
+    var t=$("ysHash").value.trim().toLowerCase();
+    if(!t){return;}
+    var base=t.replace(/[^a-z0-9 ]/g,"").split(/\s+/).filter(Boolean);
+    var tags=["#"+base.join("")];
+    base.forEach(function(w){if(w.length>2)tags.push("#"+w);});
+    tags.push("#"+base.join("")+"2026","#trending","#viral","#youtube");
+    var seen={},out=[];
+    tags.forEach(function(h){if(!seen[h]){seen[h]=1;out.push(h);}});
+    out=out.slice(0,8);
+    var box=$("ysHashOut");box.style.display="block";
+    box.innerHTML="<strong>"+out.join(" ")+"</strong><br><small style='color:var(--muted)'>Tip: put the first 3 in your description — they show above the title.</small>";
+  });
+  // DESCRIPTION
+  $("ysDescGo").addEventListener("click",function(){
+    var topic=$("ysDescTopic").value.trim()||"this video";
+    var ch=$("ysChannel").value.trim()||"my channel";
+    $("ysDescOut").value=
+      topic.charAt(0).toUpperCase()+topic.slice(1)+" — everything you need to know!\n\n"+
+      "In this video I cover "+topic+" step by step. Watch till the end for the best tips.\n\n"+
+      "⏱ TIMESTAMPS\n00:00 Intro\n01:30 Main topic\n05:00 Tips & tricks\n08:00 Final thoughts\n\n"+
+      "🔔 Subscribe to "+ch+" for more videos like this!\n\n"+
+      "#"+topic.replace(/[^a-zA-Z0-9 ]/g,"").split(" ").filter(Boolean).join("").slice(0,30).toLowerCase()+" #youtube #trending";
+  });
+  $("ysDescCopy").addEventListener("click",function(){
+    var o=$("ysDescOut");if(!o.value)return;o.select();document.execCommand("copy");
+  });
+})();
+</script>
+</body>
+</html>

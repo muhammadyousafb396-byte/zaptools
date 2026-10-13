@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video to GIF Maker — Free Online, No Watermark</title>
+  <meta name="description" content="Free video to GIF maker: trim any clip, set FPS and size, download GIFs with no watermark — in your browser.">
+  <meta name="keywords" content="video to gif, gif maker, mp4 to gif, convert video to gif online">
+  <meta property="og:title" content="Video to GIF Maker — Free Online, No Watermark">
+  <meta property="og:description" content="Free video to GIF maker: trim any clip, set FPS and size, download GIFs with no watermark — in your browser.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://muhammadyousafb396-byte.github.io/zaptools/video-to-gif/">
+  <meta property="og:image" content="https://muhammadyousafb396-byte.github.io/zaptools/assets/og-cover.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Video to GIF Maker — Free Online, No Watermark">
+  <meta name="twitter:description" content="Free video to GIF maker: trim any clip, set FPS and size, download GIFs with no watermark — in your browser.">
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="canonical" href="https://muhammadyousafb396-byte.github.io/zaptools/video-to-gif/">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="https://unpkg.com/@ffmpeg/ffmpeg@0.11.6/dist/ffmpeg.min.js"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://muhammadyousafb396-byte.github.io/zaptools/"},
+    {"@type":"ListItem","position":2,"name":"Video to GIF","item":"https://muhammadyousafb396-byte.github.io/zaptools/video-to-gif/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long should my GIF be?","acceptedAnswer":{"@type":"Answer","text":"2–6 seconds is ideal. Longer clips make huge files — trim to the best moment."}},{"@type":"Question","name":"What FPS should I choose?","acceptedAnswer":{"@type":"Answer","text":"10–12 FPS keeps files small and smooth enough. 15+ looks better but grows the file fast."}},{"@type":"Question","name":"Is there a watermark?","acceptedAnswer":{"@type":"Answer","text":"No — GIFs are clean, with no watermark, ever."}},{"@type":"Question","name":"Is my video uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Conversion runs locally with FFmpeg in your browser."}}]}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7410698728762849" crossorigin="anonymous"></script>
+</head>
+<body>
+<header class="site-header"><div class="container nav-inner">
+  <a class="logo" href="../"><img src="../assets/logo.png" alt="ZapTools logo" width="34" height="34">
+ZapTools</a>
+  <nav class="nav-links" aria-label="Main navigation"><a href="../">Home</a><a href="../calculator/">Calculator</a><a href="../image-to-text/">OCR</a><a href="../image-converter/">Converter</a><a href="../seo-checker/">SEO Checker</a><a href="../about.html">About</a></nav>
+</div></header>
+<main>
+  <section class="tool-hero"><div class="container">
+    <h1>Video to GIF Maker</h1>
+    <p>Turn any clip into a GIF — trim, set FPS & size. No watermark, ever.</p>
+  </div></section>
+  <div class="container">
+    <p class="breadcrumb"><a href="../">Home</a> &rsaquo; Video to GIF</p>
+    <section class="tool-box" aria-label="Video to GIF tool">
+      <div class="field"><label for="vgFile">Upload a video</label><input type="file" id="vgFile" accept="video/*"></div>
+      <div class="form-row" style="margin-top:12px">
+        <div class="field"><label for="vgStart">Start (seconds)</label><input type="number" id="vgStart" value="0" min="0" step="0.5"></div>
+        <div class="field"><label for="vgDur">Duration (seconds)</label><input type="number" id="vgDur" value="3" min="1" max="15" step="0.5"></div>
+        <div class="field"><label for="vgFps">FPS</label><select id="vgFps">
+          <option value="10">10 — small file</option><option value="12" selected>12 — balanced</option>
+          <option value="15">15 — smoother</option><option value="20">20 — large file</option>
+        </select></div>
+        <div class="field"><label for="vgW">Width (px)</label><select id="vgW">
+          <option value="320">320 — small</option><option value="480" selected>480 — medium</option>
+          <option value="640">640 — large</option>
+        </select></div>
+      </div>
+      <div class="form-row" style="margin-top:12px"><button class="btn btn-grad" id="vgGo">🎬 Create GIF</button></div>
+      <p class="status" id="vgMsg"></p>
+      <div class="result-box" id="vgProg" style="display:none"><div style="background:var(--border);border-radius:8px;height:14px;overflow:hidden"><div id="vgBar" style="height:100%;width:0;background:linear-gradient(90deg,#4f46e5,#7c3aed)"></div></div><p class="status" id="vgPct" style="margin-top:6px">0%</p></div>
+      <div class="result-box" id="vgOut" style="display:none;margin-top:12px;text-align:center"></div>
+    </section>
+    <div class="ad-slot">Advertisement</div>
+    <section class="prose">
+      <h2>Perfect GIFs, no watermark</h2>
+      <p>Trim the best 2–6 seconds of any clip, pick your frame rate and size, and download a clean GIF — great for memes, reactions and tutorials.</p>
+      <h3>Keep files small</h3>
+      <p>GIFs grow fast: 12 FPS at 480px is the sweet spot. Longer than 6 seconds or 20 FPS can produce 10 MB+ files.</p>
+    </section>
+    <section class="faq"><h2 style="text-align:center;margin-bottom:16px">Frequently Asked Questions</h2><div class="prose">
+      <details><summary>How long should my GIF be?</summary><p>2–6 seconds is ideal. Longer clips make huge files — trim to the best moment.</p></details>
+      <details><summary>What FPS should I choose?</summary><p>10–12 FPS keeps files small and smooth enough. 15+ looks better but grows the file fast.</p></details>
+      <details><summary>Is there a watermark?</summary><p>No — GIFs are clean, with no watermark, ever.</p></details>
+      <details><summary>Is my video uploaded anywhere?</summary><p>No. Conversion runs locally with FFmpeg in your browser.</p></details>
+    </div></section>
+  </div>
+</main>
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div><div class="footer-logo"><img src="../assets/logo.png" alt="ZapTools logo" width="28" height="28">ZapTools</div><p style="font-size:.9rem">Free online tools that respect your privacy. Everything runs in your browser.</p></div>
+    <div><h4>Popular Tools</h4><a href="../">Currency Converter</a><a href="../calculator/">Scientific Calculator</a><a href="../age-calculator/">Age Calculator</a><a href="../bmi-calculator/">BMI Calculator</a></div>
+    <div><h4>More Tools</h4><a href="../word-counter/">Word Counter</a><a href="../password-generator/">Password Generator</a><a href="../qr-generator/">QR Generator</a><a href="../seo-checker/">SEO Checker</a></div>
+    <div><h4>Company</h4><a href="../about.html">About Us</a><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy Policy</a></div>
+  </div>
+  <div class="footer-bottom">&copy; <span data-year></span> ZapTools. All rights reserved.</div>
+</div></footer>
+<script src="../app.js"></script>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id);};
+  var ffmpeg=null,loaded=false;
+  function fmt(n){return n>1048576?(n/1048576).toFixed(2)+" MB":(n/1024).toFixed(1)+" KB";}
+  $("vgGo").addEventListener("click",async function(){
+    var f=$("vgFile").files[0];
+    if(!f){$("vgMsg").textContent="Upload a video first.";return;}
+    var start=parseFloat($("vgStart").value)||0,dur=Math.min(15,parseFloat($("vgDur").value)||3);
+    var fps=$("vgFps").value,w=$("vgW").value;
+    $("vgMsg").textContent="⏳ Loading encoder (first time ~25 MB, then cached)…";
+    $("vgProg").style.display="block";$("vgOut").style.display="none";
+    try{
+      if(!loaded){
+        ffmpeg=FFmpeg.createFFmpeg({log:false});
+        ffmpeg.setProgress(function(p){var r=Math.round((p.ratio||0)*100);$("vgBar").style.width=r+"%";$("vgPct").textContent=r+"%";});
+        await ffmpeg.load();loaded=true;
+      }
+      $("vgMsg").textContent="⏳ Creating GIF… keep this tab open.";
+      var name="in_"+Date.now()+"."+(f.name.split(".").pop()||"mp4");
+      ffmpeg.FS("writeFile",name,await FFmpeg.fetchFile(f));
+      var vf="fps="+fps+",scale="+w+":-1:flags=lanczos,split[s0][s1];[s0]palettegen=max_colors=256[p];[s1][p]paletteuse";
+      await ffmpeg.run("-ss",String(start),"-t",String(dur),"-i",name,"-vf",vf,"out.gif");
+      var data=ffmpeg.FS("readFile","out.gif");
+      ffmpeg.FS("unlink",name);ffmpeg.FS("unlink","out.gif");
+      var blob=new Blob([data.buffer],{type:"image/gif"});
+      var url=URL.createObjectURL(blob);
+      $("vgOut").style.display="block";
+      $("vgOut").innerHTML='<img src="'+url+'" alt="Generated GIF preview" style="max-width:100%;max-height:360px;border-radius:8px"><br><br>'+
+        'Size: <strong>'+fmt(blob.size)+'</strong><br><br>'+
+        '<a class="btn btn-grad" href="'+url+'" download="zaptools.gif">⬇️ Download GIF</a>';
+      $("vgMsg").textContent="✓ GIF ready!";
+    }catch(e){
+      console.error(e);
+      $("vgMsg").textContent="✕ GIF creation failed — try a shorter clip or smaller video.";
+    }
+  });
+})();
+</script>
+</body>
+</html>
