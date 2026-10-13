@@ -1,0 +1,128 @@
+/* ZapTools — shared stylesheet. Blue/indigo gradient theme, mobile-first. */
+:root{
+  --indigo:#4f46e5; --indigo-dark:#3730a3; --blue:#2563eb; --sky:#0ea5e9;
+  --bg:#f6f8ff; --card:#ffffff; --text:#1e2433; --muted:#5b6478;
+  --border:#e3e8f5; --radius:14px; --shadow:0 6px 24px rgba(79,70,229,.10);
+  --grad:linear-gradient(135deg,#4f46e5 0%,#2563eb 55%,#0ea5e9 100%);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:16px}
+img{max-width:100%;height:auto}
+a{color:var(--indigo);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1100px;margin:0 auto;padding:0 18px}
+
+/* Header/nav */
+.site-header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.35rem;color:var(--text)}
+.logo:hover{text-decoration:none}
+.logo svg{width:34px;height:34px}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{padding:8px 12px;border-radius:8px;color:var(--muted);font-weight:600;font-size:.93rem}
+.nav-links a:hover,.nav-links a.active{background:#eef1ff;color:var(--indigo-dark);text-decoration:none}
+
+/* Hero */
+.hero{background:var(--grad);color:#fff;padding:56px 0 48px;text-align:center}
+.hero h1{font-size:2.2rem;margin-bottom:12px;line-height:1.25}
+.hero p.sub{font-size:1.08rem;opacity:.92;max-width:640px;margin:0 auto 22px}
+.hero .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 26px;border-radius:10px;font-weight:700;border:none;cursor:pointer;font-size:1rem;transition:transform .12s,box-shadow .12s}
+.btn-primary{background:#fff;color:var(--indigo-dark);box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.btn-primary:hover{transform:translateY(-2px);text-decoration:none}
+.btn-grad{background:var(--grad);color:#fff;box-shadow:var(--shadow)}
+.btn-grad:hover{transform:translateY(-2px);text-decoration:none;color:#fff}
+.btn-ghost{background:#eef1ff;color:var(--indigo-dark)}
+.btn:disabled{opacity:.55;cursor:not-allowed;transform:none}
+
+/* Tool grid */
+.section{padding:44px 0}
+.section h2{font-size:1.6rem;margin-bottom:8px;text-align:center}
+.section .lede{text-align:center;color:var(--muted);max-width:680px;margin:0 auto 26px}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+.tool-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px 20px;box-shadow:var(--shadow);transition:transform .15s,box-shadow .15s;display:flex;flex-direction:column;gap:10px}
+.tool-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(79,70,229,.16);text-decoration:none}
+.tool-card .icon{width:52px;height:52px;border-radius:12px;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.5rem}
+.tool-card h3{font-size:1.08rem;color:var(--text)}
+.tool-card p{font-size:.9rem;color:var(--muted);flex:1}
+
+/* Tool page layout */
+.tool-hero{background:var(--grad);color:#fff;padding:40px 0 34px;text-align:center}
+.tool-hero h1{font-size:1.9rem;margin-bottom:8px}
+.tool-hero p{opacity:.92;max-width:620px;margin:0 auto}
+.breadcrumb{font-size:.85rem;color:var(--muted);margin:18px 0 0}
+.breadcrumb a{color:var(--indigo)}
+.tool-box{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px;margin:26px 0}
+.form-row{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;margin-bottom:16px}
+.field{display:flex;flex-direction:column;gap:6px;flex:1;min-width:150px}
+.field label{font-weight:700;font-size:.9rem}
+input[type=text],input[type=url],input[type=number],select,textarea{padding:11px 13px;border:1.5px solid var(--border);border-radius:9px;font-size:1rem;font-family:inherit;width:100%;background:#fff}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--indigo);box-shadow:0 0 0 3px rgba(79,70,229,.15)}
+textarea{min-height:120px;resize:vertical}
+.result-box{background:#f0f3ff;border:1.5px dashed var(--indigo);border-radius:10px;padding:18px;margin-top:16px;font-size:1.05rem}
+.progress{height:10px;background:#e8ecf9;border-radius:6px;overflow:hidden;margin:12px 0}
+.progress>div{height:100%;background:var(--grad);width:0%;transition:width .3s}
+.status{font-size:.92rem;color:var(--muted);margin-top:8px}
+
+/* Content sections */
+.prose{max-width:800px;margin:0 auto}
+.prose h2{font-size:1.45rem;margin:30px 0 12px;text-align:left}
+.prose h3{font-size:1.15rem;margin:22px 0 8px}
+.prose p,.prose li{color:#333d52}
+.prose ul,.prose ol{margin:10px 0 16px 22px}
+.faq{margin-top:10px}
+.faq details{background:#fff;border:1px solid var(--border);border-radius:10px;margin-bottom:10px;padding:14px 18px}
+.faq summary{font-weight:700;cursor:pointer;color:var(--indigo-dark)}
+.faq details p{margin-top:8px;font-size:.95rem}
+
+/* Footer */
+.site-footer{background:#141a2e;color:#c6cde3;padding:44px 0 22px;margin-top:40px}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:26px;margin-bottom:26px}
+.site-footer h4{color:#fff;margin-bottom:12px;font-size:1rem}
+.site-footer a{color:#aeb7d4;font-size:.92rem;display:block;margin-bottom:8px}
+.site-footer a:hover{color:#fff}
+.footer-bottom{border-top:1px solid #2a3350;padding-top:18px;text-align:center;font-size:.85rem;color:#8b94b3}
+.footer-logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:1.2rem;margin-bottom:10px}
+
+/* Ad placeholder */
+.ad-slot{background:#eef1ff;border:1px dashed #b9c2e8;border-radius:10px;text-align:center;color:#8b94b3;font-size:.8rem;padding:14px;margin:22px auto;max-width:728px}
+
+/* Calculator */
+.calc{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;max-width:480px;margin:0 auto}
+.calc-display{grid-column:1/-1;background:#141a2e;color:#fff;border-radius:10px;padding:18px;text-align:right;font-size:1.7rem;min-height:76px;word-break:break-all;font-family:'Consolas',monospace}
+.calc button{padding:14px 6px;font-size:1.02rem;border:1px solid var(--border);border-radius:9px;background:#fff;cursor:pointer;font-weight:600}
+.calc button:hover{background:#eef1ff}
+.calc button.op{background:#e6ebff;color:var(--indigo-dark);font-weight:800}
+.calc button.fn{background:#f2f4fc;color:#4b5876;font-size:.92rem}
+.calc button.eq{background:var(--grad);color:#fff;grid-column:span 2;font-weight:800}
+
+/* Misc */
+.drop-zone{border:2px dashed #b9c2e8;border-radius:12px;padding:34px 18px;text-align:center;background:#fafbff;cursor:pointer;transition:border-color .15s}
+.drop-zone:hover{border-color:var(--indigo)}
+.drop-zone input{display:none}
+canvas.preview{max-width:100%;border-radius:10px;border:1px solid var(--border);margin-top:14px}
+.thumb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-top:16px}
+.thumb-card{background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.thumb-card img{width:100%;display:block}
+.thumb-card .cap{padding:10px;font-size:.85rem;display:flex;justify-content:space-between;align-items:center}
+.score-ring{width:110px;height:110px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;font-weight:800;color:#fff;margin:0 auto 14px}
+.check-list{list-style:none;margin:12px 0!important}
+.check-list li{padding:8px 0 8px 30px;position:relative;border-bottom:1px solid #f0f2fa}
+.check-list li::before{content:"";position:absolute;left:4px;top:13px}
+.check-list li.pass::before{content:"✓";color:#16a34a;font-weight:800}
+.check-list li.warn::before{content:"!";color:#d97706;font-weight:800}
+.check-list li.fail::before{content:"✕";color:#dc2626;font-weight:800}
+.swap-btn{align-self:center;padding:10px 14px;border-radius:50%;border:1.5px solid var(--border);background:#fff;cursor:pointer;font-size:1.1rem}
+table.rates{width:100%;border-collapse:collapse;margin-top:14px;font-size:.92rem}
+table.rates th,table.rates td{padding:9px 10px;border-bottom:1px solid var(--border);text-align:left}
+table.rates th{background:#eef1ff;color:var(--indigo-dark)}
+
+@media(max-width:640px){
+  .hero h1{font-size:1.65rem}
+  .tool-hero h1{font-size:1.45rem}
+  .calc{grid-template-columns:repeat(4,1fr)}
+  .calc button.eq{grid-column:span 2}
+  .nav-links{display:none}
+  .tool-box{padding:18px}
+}

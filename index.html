@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZapTools — Free Online Tools: Converter, Calculator, OCR & More</title>
+  <meta name="description" content="ZapTools offers 50 free online tools: currency converter, calculators, OCR, image tools, SEO checker & more. No signup, private.">
+  <meta name="keywords" content="free online tools, currency converter, scientific calculator, image to text, ocr online, text to image, video to audio, image converter, youtube thumbnail downloader, seo checker">
+  <meta property="og:title" content="ZapTools — Free Online Tools: Converter, Calculator, OCR & More">
+  <meta property="og:description" content="50 free online tools that run in your browser. Currency converter, scientific calculator, OCR, image tools, SEO checker & more.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://muhammadyousafb396-byte.github.io/zaptools/">
+  <meta property="og:image" content="https://muhammadyousafb396-byte.github.io/zaptools/assets/og-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ZapTools — Free Online Tools">
+  <meta name="twitter:description" content="50 free online tools: currency converter, calculator, OCR, image tools, SEO checker. No signup needed.">
+  <meta name="twitter:image" content="https://muhammadyousafb396-byte.github.io/zaptools/assets/og-cover.png">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234f46e5'/%3E%3Cpath d='M36 8 L18 36 h12 L28 56 L46 26 h-12 z' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="canonical" href="https://muhammadyousafb396-byte.github.io/zaptools/">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebSite","name":"ZapTools","url":"https://muhammadyousafb396-byte.github.io/zaptools/","description":"Free online tools: currency converter, scientific calculator, image-to-text OCR, text-to-image maker, video-to-audio, image converter, YouTube thumbnail viewer and SEO checker."}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"ZapTools","url":"https://muhammadyousafb396-byte.github.io/zaptools/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"8 free browser-based online tools with no signup required."}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Are ZapTools really free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every tool on ZapTools is 100% free with no signup, no watermarks and no usage limits for normal use."}},
+    {"@type":"Question","name":"Do my files get uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. All tools run entirely in your browser using JavaScript. Your images and videos never leave your device, which keeps them private and fast."}},
+    {"@type":"Question","name":"Which tools does ZapTools offer?","acceptedAnswer":{"@type":"Answer","text":"Currency converter, scientific calculator, image-to-text OCR, text-to-image generator, video-to-audio extractor, image format converter, YouTube thumbnail viewer and a website SEO checker."}},
+    {"@type":"Question","name":"Do the tools work on mobile?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every tool is fully responsive and works on phones, tablets and desktops."}}
+  ]}
+  </script>
+  <!-- Google AdSense (Publisher ID: ca-pub-7410698728762849) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7410698728762849" crossorigin="anonymous"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-inner">
+    <a class="logo" href="./" aria-label="ZapTools home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#4f46e5"/><path d="M36 8 L18 36 h12 L28 56 L46 26 h-12 z" fill="#fff"/></svg>
+      ZapTools
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="./" class="active">Home</a>
+      <a href="calculator/">Calculator</a>
+      <a href="image-to-text/">OCR</a>
+      <a href="image-converter/">Converter</a>
+      <a href="seo-checker/">SEO Checker</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <h1>Free Online Tools That Work Instantly</h1>
+      <p class="sub">Currency converter, scientific calculator, OCR, image tools, SEO checker &amp; more — 100% free, no signup, everything runs privately in your browser.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#converter">Convert Currency Now</a>
+        <a class="btn btn-ghost" href="#tools">Browse All Tools</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <section class="tool-box" id="converter" aria-label="Currency converter">
+      <h2 style="text-align:center;margin-bottom:6px">💱 Currency Converter</h2>
+      <p style="text-align:center;color:var(--muted);margin-bottom:18px">Live exchange rates updated daily. Convert between 160+ world currencies.</p>
+      <div class="form-row">
+        <div class="field"><label for="amount">Amount</label><input type="number" id="amount" value="100" min="0" step="any"></div>
+        <div class="field"><label for="fromCur">From</label><select id="fromCur"></select></div>
+        <button class="swap-btn" id="swapBtn" title="Swap currencies" aria-label="Swap currencies">⇄</button>
+        <div class="field"><label for="toCur">To</label><select id="toCur"></select></div>
+      </div>
+      <div class="result-box" id="ccResult" role="status">Enter an amount to convert…</div>
+      <p class="status" id="ccStatus">Loading live rates…</p>
+      <div style="overflow-x:auto"><table class="rates" id="ratesTable" aria-label="Popular exchange rates"></table></div>
+    </section>
+
+    <div class="ad-slot">Advertisement</div>
+
+    <section class="section" id="tools">
+      <h2>All Free Tools</h2>
+      <p class="lede">Fifty powerful utilities. Click any tool to start using it immediately — no account needed.</p>
+            <h3 style="margin:26px 0 14px;font-size:1.25rem">Finance Tools</h3>
+      <div class="tool-grid">
+        <a class="tool-card" href="./"><span class="icon">💱</span><h3>Currency Converter</h3><p>Live rates for 160+ currencies with instant conversion.</p></a>
+        <a class="tool-card" href="loan-calculator/"><span class="icon">🏦</span><h3>Loan / EMI Calculator</h3><p>Monthly payments, total interest and payoff estimates.</p></a>
+        <a class="tool-card" href="tip-calculator/"><span class="icon">🧾</span><h3>Tip Calculator</h3><p>Tips, totals and bill splitting between friends.</p></a>
+        <a class="tool-card" href="discount-calculator/"><span class="icon">🏷️</span><h3>Discount Calculator</h3><p>Sale prices and savings for any discount %.</p></a>
+        <a class="tool-card" href="compound-interest/"><span class="icon">📈</span><h3>Compound Interest</h3><p>Project savings growth with contributions.</p></a>
+        <a class="tool-card" href="salary-converter/"><span class="icon">💼</span><h3>Salary Converter</h3><p>Convert annual, monthly, weekly and hourly pay.</p></a>
+        <a class="tool-card" href="fuel-calculator/"><span class="icon">⛽</span><h3>Fuel Cost Calculator</h3><p>Estimate trip fuel costs from MPG and prices.</p></a>
+      </div>
+      <h3 style="margin:26px 0 14px;font-size:1.25rem">Calculators</h3>
+      <div class="tool-grid">
+        <a class="tool-card" href="calculator/"><span class="icon">🧮</span><h3>Scientific Calculator</h3><p>Full scientific functions with keyboard support.</p></a>
+        <a class="tool-card" href="age-calculator/"><span class="icon">🎂</span><h3>Age Calculator</h3><p>Exact age in years, months, days and total days.</p></a>
+        <a class="tool-card" href="bmi-calculator/"><span class="icon">⚖️</span><h3>BMI Calculator</h3><p>Body Mass Index with healthy-weight categories.</p></a>
+        <a class="tool-card" href="percentage-calculator/"><span class="icon">％</span><h3>Percentage Calculator</h3><p>X% of Y, percent change and reverse %.</p></a>
+        <a class="tool-card" href="gpa-calculator/"><span class="icon">🎓</span><h3>GPA Calculator</h3><p>Semester GPA from courses, grades and credits.</p></a>
+        <a class="tool-card" href="unit-converter/"><span class="icon">📏</span><h3>Unit Converter</h3><p>Length, weight and temperature conversions.</p></a>
+        <a class="tool-card" href="cooking-converter/"><span class="icon">🍳</span><h3>Cooking Converter</h3><p>Cups, grams, ml and oz with ingredient densities.</p></a>
+      </div>
+      <h3 style="margin:26px 0 14px;font-size:1.25rem">Text Tools</h3>
+      <div class="tool-grid">
+        <a class="tool-card" href="word-counter/"><span class="icon">🔢</span><h3>Word Counter</h3><p>Words, characters, sentences and reading time.</p></a>
+        <a class="tool-card" href="text-case-converter/"><span class="icon">🔡</span><h3>Text Case Converter</h3><p>UPPER, lower, Title Case and more.</p></a>
+        <a class="tool-card" href="fancy-text/"><span class="icon">✨</span><h3>Fancy Text Generator</h3><p>Stylish Unicode fonts for bios and captions.</p></a>
+        <a class="tool-card" href="text-to-speech/"><span class="icon">🔊</span><h3>Text to Speech</h3><p>Hear any text read aloud with natural voices.</p></a>
+        <a class="tool-card" href="reverse-text/"><span class="icon">🔄</span><h3>Reverse Text</h3><p>Flip text backwards or upside-down.</p></a>
+        <a class="tool-card" href="remove-duplicates/"><span class="icon">🧹</span><h3>Remove Duplicate Lines</h3><p>Dedupe lists keeping first occurrences.</p></a>
+        <a class="tool-card" href="sort-lines/"><span class="icon">🔤</span><h3>Sort Lines A–Z</h3><p>Alphabetical, length sort and shuffle.</p></a>
+        <a class="tool-card" href="lorem-ipsum/"><span class="icon">📝</span><h3>Lorem Ipsum Generator</h3><p>Placeholder text for designs and mockups.</p></a>
+        <a class="tool-card" href="image-to-text/"><span class="icon">📷</span><h3>Image to Text (OCR)</h3><p>Extract text from photos and screenshots.</p></a>
+        <a class="tool-card" href="text-to-image/"><span class="icon">🎨</span><h3>Text to Image Maker</h3><p>Stylish quote images to download as PNG.</p></a>
+      </div>
+      <h3 style="margin:26px 0 14px;font-size:1.25rem">Image & Video Tools</h3>
+      <div class="tool-grid">
+        <a class="tool-card" href="image-converter/"><span class="icon">🖼️</span><h3>Image Converter</h3><p>Convert PNG, JPG, WebP — resize and compress.</p></a>
+        <a class="tool-card" href="video-to-audio/"><span class="icon">🎵</span><h3>Video to Audio</h3><p>Extract MP3 audio from video files privately.</p></a>
+        <a class="tool-card" href="youtube-thumbnail/"><span class="icon">📺</span><h3>YouTube Thumbnail Viewer</h3><p>Preview any video's thumbnails in all qualities.</p></a>
+        <a class="tool-card" href="youtube-monetization-checker/"><span class="icon">💰</span><h3>YouTube Monetization Checker</h3><p>Channel stats and YPP eligibility for 2026.</p></a>
+        <a class="tool-card" href="qr-generator/"><span class="icon">⬛</span><h3>QR Code Generator</h3><p>Custom QR codes with PNG download.</p></a>
+        <a class="tool-card" href="color-converter/"><span class="icon">🎨</span><h3>Color Picker & Converter</h3><p>HEX, RGB and HSL codes with live preview.</p></a>
+        <a class="tool-card" href="palette-generator/"><span class="icon">🌈</span><h3>Palette Generator</h3><p>Harmonious color schemes, click to copy.</p></a>
+      </div>
+      <h3 style="margin:26px 0 14px;font-size:1.25rem">Developer Tools</h3>
+      <div class="tool-grid">
+        <a class="tool-card" href="json-formatter/"><span class="icon">📦</span><h3>JSON Formatter</h3><p>Validate, beautify and minify JSON.</p></a>
+        <a class="tool-card" href="base64/"><span class="icon">🔐</span><h3>Base64 Encoder</h3><p>Encode and decode Base64 text instantly.</p></a>
+        <a class="tool-card" href="url-encoder/"><span class="icon">🔗</span><h3>URL Encoder</h3><p>Percent-encode URLs for safe query strings.</p></a>
+        <a class="tool-card" href="hash-generator/"><span class="icon">🛡️</span><h3>Hash Generator</h3><p>SHA-256, SHA-1 and SHA-512 hashes.</p></a>
+        <a class="tool-card" href="base-converter/"><span class="icon">🔢</span><h3>Base Converter</h3><p>Binary, octal, decimal and hexadecimal.</p></a>
+        <a class="tool-card" href="roman-numerals/"><span class="icon">🏛️</span><h3>Roman Numerals</h3><p>Convert numbers to/from Roman numerals.</p></a>
+        <a class="tool-card" href="seo-checker/"><span class="icon">🚀</span><h3>SEO Checker</h3><p>Audit any page: title, meta, headings, score.</p></a>
+        <a class="tool-card" href="password-generator/"><span class="icon">🔑</span><h3>Password Generator</h3><p>Strong random passwords with strength meter.</p></a>
+      </div>
+      <h3 style="margin:26px 0 14px;font-size:1.25rem">Time & Date</h3>
+      <div class="tool-grid">
+        <a class="tool-card" href="stopwatch/"><span class="icon">⏱️</span><h3>Stopwatch</h3><p>Precise stopwatch with lap times.</p></a>
+        <a class="tool-card" href="countdown-timer/"><span class="icon">⏳</span><h3>Countdown Timer</h3><p>Countdown with alarm sound on finish.</p></a>
+        <a class="tool-card" href="world-clock/"><span class="icon">🌍</span><h3>World Clock</h3><p>Live time in major world cities.</p></a>
+        <a class="tool-card" href="date-duration/"><span class="icon">📅</span><h3>Date Duration</h3><p>Days, weeks and months between dates.</p></a>
+      </div>
+      <h3 style="margin:26px 0 14px;font-size:1.25rem">Random & Fun</h3>
+      <div class="tool-grid">
+        <a class="tool-card" href="random-number/"><span class="icon">🎲</span><h3>Random Number Generator</h3><p>Fair random numbers in any range.</p></a>
+        <a class="tool-card" href="dice-roller/"><span class="icon">🎯</span><h3>Dice Roller</h3><p>D4–D20 with modifiers and history.</p></a>
+        <a class="tool-card" href="coin-flip/"><span class="icon">🪙</span><h3>Coin Flip</h3><p>Heads or tails with streak stats.</p></a>
+      </div>
+      <h3 style="margin:26px 0 14px;font-size:1.25rem">Device & Utilities</h3>
+      <div class="tool-grid">
+        <a class="tool-card" href="screen-info/"><span class="icon">🖥️</span><h3>Screen Info</h3><p>Resolution, viewport, DPR and orientation.</p></a>
+        <a class="tool-card" href="browser-info/"><span class="icon">🌐</span><h3>Browser Info</h3><p>Browser, OS, language and device report.</p></a>
+        <a class="tool-card" href="speed-test/"><span class="icon">🚀</span><h3>Speed Test</h3><p>Measure your download speed instantly.</p></a>
+        <a class="tool-card" href="notepad/"><span class="icon">📓</span><h3>Online Notepad</h3><p>Autosaving notes with .txt download.</p></a>
+      </div>
+
+    </section>
+
+    <section class="section prose" style="padding-top:0">
+      <h2>Why Use ZapTools?</h2>
+      <p>ZapTools is a collection of <strong>free online utilities</strong> built for speed and privacy. Unlike many tool sites, everything runs <strong>entirely in your browser</strong> — your files are never uploaded to a server, so image conversion, OCR and video-to-audio extraction stay private and instant.</p>
+      <h3>What you can do here</h3>
+      <ul>
+        <li><strong>Convert currencies</strong> with live daily exchange rates for over 160 world currencies.</li>
+        <li><strong>Calculate anything</strong> with a full scientific calculator that supports keyboard input.</li>
+        <li><strong>Extract text from images</strong> using OCR — perfect for screenshots, receipts and scanned documents.</li>
+        <li><strong>Create shareable graphics</strong> from text with gradient backgrounds and one-click PNG download.</li>
+        <li><strong>Pull audio from video</strong> files and save it as MP3 without installing software.</li>
+        <li><strong>Convert and resize images</strong> between PNG, JPEG and WebP formats.</li>
+        <li><strong>Preview YouTube thumbnails</strong> in every available resolution from any video link.</li>
+        <li><strong>Audit website SEO</strong> — check titles, meta descriptions, headings and image alt text with an instant score.</li>
+      </ul>
+      <h3>Built for 2026</h3>
+      <p>Every tool is mobile-friendly, loads fast, and works offline-capable where possible. New tools are added regularly based on what users search for most.</p>
+    </section>
+
+    <section class="section faq" style="padding-top:0">
+      <h2>Frequently Asked Questions</h2>
+      <div class="prose">
+        <details><summary>Are ZapTools really free?</summary><p>Yes. Every tool on ZapTools is 100% free with no signup, no watermarks and no usage limits for normal use.</p></details>
+        <details><summary>Do my files get uploaded to a server?</summary><p>No. All tools run entirely in your browser using JavaScript. Your images and videos never leave your device.</p></details>
+        <details><summary>Which tools does ZapTools offer?</summary><p>Currency converter, scientific calculator, image-to-text OCR, text-to-image generator, video-to-audio extractor, image format converter, YouTube thumbnail viewer and a website SEO checker.</p></details>
+        <details><summary>Do the tools work on mobile?</summary><p>Yes. Every tool is fully responsive and works on phones, tablets and desktops.</p></details>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><svg width="28" height="28" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#4f46e5"/><path d="M36 8 L18 36 h12 L28 56 L46 26 h-12 z" fill="#fff"/></svg>ZapTools</div>
+        <p style="font-size:.9rem">Free online tools that respect your privacy. Everything runs in your browser.</p>
+      </div>
+      <div><h4>Tools</h4><a href="./">Currency Converter</a><a href="calculator/">Scientific Calculator</a><a href="image-to-text/">Image to Text OCR</a><a href="text-to-image/">Text to Image</a></div>
+      <div><h4>More Tools</h4><a href="video-to-audio/">Video to Audio</a><a href="image-converter/">Image Converter</a><a href="youtube-thumbnail/">YouTube Thumbnails</a><a href="seo-checker/">SEO Checker</a></div>
+      <div><h4>Company</h4><a href="about.html">About Us</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a></div>
+    </div>
+    <div class="footer-bottom">© <span data-year></span> ZapTools. All rights reserved. · Contact: muhammadyousafa396@gmail.com</div>
+  </div>
+</footer>
+<script src="app.js"></script>
+<script>
+(function(){
+  var FALLBACK={USD:1,EUR:0.92,GBP:0.79,PKR:278.5,INR:83.2,AED:3.67,SAR:3.75,CAD:1.36,AUD:1.52,CNY:7.24,JPY:149.8,TRY:32.4,BDT:117.5};
+  var NAMES={USD:"US Dollar",EUR:"Euro",GBP:"British Pound",PKR:"Pakistani Rupee",INR:"Indian Rupee",AED:"UAE Dirham",SAR:"Saudi Riyal",CAD:"Canadian Dollar",AUD:"Australian Dollar",CNY:"Chinese Yuan",JPY:"Japanese Yen",TRY:"Turkish Lira",BDT:"Bangladeshi Taka"};
+  var rates=null,lastUpdate="";
+  var fromEl=document.getElementById('fromCur'),toEl=document.getElementById('toCur');
+  function fillSelects(list){
+    var opts=list.map(function(c){return '<option value="'+c+'">'+c+' — '+(NAMES[c]||c)+'</option>';}).join('');
+    fromEl.innerHTML=opts;toEl.innerHTML=opts;fromEl.value="USD";toEl.value="PKR";
+  }
+  function convert(){
+    var amt=parseFloat(document.getElementById('amount').value);
+    var box=document.getElementById('ccResult');
+    if(!rates||isNaN(amt)){box.textContent="Enter an amount to convert…";return;}
+    var f=fromEl.value,t=toEl.value;
+    if(!rates[f]||!rates[t]){box.textContent="Rate unavailable for this pair.";return;}
+    var res=amt/rates[f]*rates[t];
+    box.innerHTML="<strong>"+amt.toLocaleString()+" "+f+"</strong> = <strong style='color:var(--indigo-dark)'>"+res.toLocaleString(undefined,{maximumFractionDigits:2})+" "+t+"</strong><br><small style='color:var(--muted)'>1 "+f+" = "+(rates[t]/rates[f]).toFixed(4)+" "+t+(lastUpdate?" · Updated "+lastUpdate:"")+"</small>";
+  }
+  function popular(){
+    var t=document.getElementById('ratesTable');
+    var rows=[["EUR","Euro"],["GBP","British Pound"],["PKR","Pakistani Rupee"],["INR","Indian Rupee"],["AED","UAE Dirham"],["SAR","Saudi Riyal"],["JPY","Japanese Yen"],["CAD","Canadian Dollar"]];
+    t.innerHTML="<tr><th>Currency</th><th>1 USD =</th></tr>"+rows.map(function(r){
+      return "<tr><td>"+r[0]+" — "+r[1]+"</td><td>"+(rates&&rates[r[0]]?rates[r[0]].toFixed(4):"—")+"</td></tr>";
+    }).join('');
+  }
+  document.getElementById('amount').addEventListener('input',convert);
+  fromEl.addEventListener('change',convert);toEl.addEventListener('change',convert);
+  document.getElementById('swapBtn').addEventListener('click',function(){var v=fromEl.value;fromEl.value=toEl.value;toEl.value=v;convert();});
+  fetch("https://open.er-api.com/v6/latest/USD").then(function(r){return r.json();}).then(function(d){
+    if(d&&d.result==="success"&&d.rates){rates=d.rates;lastUpdate=d.time_last_update_utc?d.time_last_update_utc.split(" ").slice(0,4).join(" "):"";document.getElementById('ccStatus').textContent="✓ Live rates loaded.";}
+    else{throw 0;}
+  }).catch(function(){
+    rates=FALLBACK;document.getElementById('ccStatus').textContent="Showing reference rates (live feed unavailable).";
+  }).then(function(){
+    fillSelects(Object.keys(rates).sort());convert();popular();
+  });
+})();
+</script>
+</body>
+</html>

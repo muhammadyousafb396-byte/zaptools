@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Converter — HEX, RGB, HSL Picker Free</title>
+  <meta name="description" content="Free color picker and converter: pick a color and get HEX, RGB and HSL codes instantly with live preview and one-click copy.">
+  <meta name="keywords" content="color picker, hex to rgb, rgb to hex, hsl converter, color codes">
+  <meta property="og:title" content="Color Converter — HEX, RGB, HSL Picker Free">
+  <meta property="og:description" content="Free color picker and converter: pick a color and get HEX, RGB and HSL codes instantly with live preview and one-click copy.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://muhammadyousafb396-byte.github.io/zaptools/color-converter/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Color Converter — HEX, RGB, HSL Picker Free">
+  <meta name="twitter:description" content="Free color picker and converter: pick a color and get HEX, RGB and HSL codes instantly with live preview and one-click copy.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234f46e5'/%3E%3Cpath d='M36 8 L18 36 h12 L28 56 L46 26 h-12 z' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="canonical" href="https://muhammadyousafb396-byte.github.io/zaptools/color-converter/">
+  <link rel="stylesheet" href="../styles.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://muhammadyousafb396-byte.github.io/zaptools/"},
+    {"@type":"ListItem","position":2,"name":"Color Picker & Converter","item":"https://muhammadyousafb396-byte.github.io/zaptools/color-converter/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between HEX and RGB?","acceptedAnswer":{"@type":"Answer","text":"They describe the same color differently: HEX is a compact base-16 code, RGB lists the three light channels separately."}},{"@type":"Question","name":"Can I pick from an image?","acceptedAnswer":{"@type":"Answer","text":"Use the native color picker \u2014 on most browsers it includes an eyedropper to sample any pixel on screen."}},{"@type":"Question","name":"Is there a palette tool?","acceptedAnswer":{"@type":"Answer","text":"Yes \u2014 try our Color Palette Generator for harmonious multi-color schemes."}}]}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7410698728762849" crossorigin="anonymous"></script>
+  
+</head>
+<body>
+<header class="site-header"><div class="container nav-inner">
+  <a class="logo" href="../"><svg viewBox="0 0 64 64" width="34" height="34" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#4f46e5"/><path d="M36 8 L18 36 h12 L28 56 L46 26 h-12 z" fill="#fff"/></svg>ZapTools</a>
+  <nav class="nav-links" aria-label="Main navigation"><a href="../">Home</a><a href="../calculator/">Calculator</a><a href="../image-to-text/">OCR</a><a href="../image-converter/">Converter</a><a href="../seo-checker/">SEO Checker</a><a href="../about.html">About</a></nav>
+</div></header>
+<main>
+  <section class="tool-hero"><div class="container">
+    <h1>Color Picker & Converter</h1>
+    <p>Pick any color — instantly get its HEX, RGB and HSL codes with live preview.</p>
+  </div></section>
+  <div class="container">
+    <p class="breadcrumb"><a href="../">Home</a> &rsaquo; Color Picker & Converter</p>
+    <section class="tool-box" aria-label="Color Picker & Converter tool">
+      <div class="form-row">
+        <div class="field"><label for="ccPick">Pick a color</label><input type="color" id="ccPick" value="#4f46e5" style="height:52px;padding:4px"></div>
+        <div class="field"><label for="ccHex">HEX</label><input type="text" id="ccHex" value="#4f46e5" maxlength="7"></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label>R / G / B (0–255)</label><div style="display:flex;gap:6px"><input type="number" id="ccR" min="0" max="255" value="79"><input type="number" id="ccG" min="0" max="255" value="70"><input type="number" id="ccB" min="0" max="255" value="229"></div></div>
+        <div class="field"><label>H / S / L</label><div style="display:flex;gap:6px"><input type="number" id="ccH" min="0" max="360"><input type="number" id="ccS" min="0" max="100"><input type="number" id="ccL" min="0" max="100"></div></div>
+      </div>
+      <div id="ccPrev" style="height:90px;border-radius:10px;border:1px solid var(--border);background:#4f46e5"></div>
+      <div class="form-row" style="margin-top:12px">
+        <button class="btn btn-ghost" id="ccCopyHex">Copy HEX</button>
+        <button class="btn btn-ghost" id="ccCopyRgb">Copy RGB</button>
+        <button class="btn btn-ghost" id="ccCopyHsl">Copy HSL</button>
+        <button class="btn btn-grad" id="ccRand">🎲 Random Color</button>
+      </div>
+    </section>
+    <div class="ad-slot">Advertisement</div>
+    <section class="prose">
+      <h2>Color formats explained</h2>
+      <ul><li><strong>HEX</strong> (#4f46e5) — the web standard, used in CSS</li>
+      <li><strong>RGB</strong> (79, 70, 229) — red/green/blue light values, 0–255</li>
+      <li><strong>HSL</strong> (244°, 82%, 59%) — hue/saturation/lightness, intuitive for adjusting shades</li></ul>
+      <p>Type in any field — the other two update automatically.</p>
+    </section>
+    <section class="faq"><h2 style="text-align:center;margin-bottom:16px">Frequently Asked Questions</h2><div class="prose">
+      <details><summary>What is the difference between HEX and RGB?</summary><p>They describe the same color differently: HEX is a compact base-16 code, RGB lists the three light channels separately.</p></details>
+      <details><summary>Can I pick from an image?</summary><p>Use the native color picker — on most browsers it includes an eyedropper to sample any pixel on screen.</p></details>
+      <details><summary>Is there a palette tool?</summary><p>Yes — try our Color Palette Generator for harmonious multi-color schemes.</p></details>
+    </div></section>
+  </div>
+</main>
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div><div class="footer-logo"><svg viewBox="0 0 64 64" width="28" height="28" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#4f46e5"/><path d="M36 8 L18 36 h12 L28 56 L46 26 h-12 z" fill="#fff"/></svg>ZapTools</div><p style="font-size:.9rem">Free online tools that respect your privacy. Everything runs in your browser.</p></div>
+    <div><h4>Popular Tools</h4><a href="../">Currency Converter</a><a href="../calculator/">Scientific Calculator</a><a href="../age-calculator/">Age Calculator</a><a href="../bmi-calculator/">BMI Calculator</a></div>
+    <div><h4>More Tools</h4><a href="../word-counter/">Word Counter</a><a href="../password-generator/">Password Generator</a><a href="../qr-generator/">QR Generator</a><a href="../seo-checker/">SEO Checker</a></div>
+    <div><h4>Company</h4><a href="../about.html">About Us</a><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy Policy</a></div>
+  </div>
+  <div class="footer-bottom">&copy; <span data-year></span> ZapTools. All rights reserved.</div>
+</div></footer>
+<script src="../app.js"></script>
+<script>
+(function(){
+  function h2r(h){h=h.replace('#','');if(h.length===3)h=h.split('').map(function(c){return c+c;}).join('');
+    var n=parseInt(h,16);return isNaN(n)?null:[n>>16&255,n>>8&255,n&255];}
+  function r2h(r,g,b){return '#'+[r,g,b].map(function(x){x=Math.max(0,Math.min(255,Math.round(x)));return x.toString(16).padStart(2,'0');}).join('');}
+  function r2l(r,g,b){r/=255;g/=255;b/=255;var mx=Math.max(r,g,b),mn=Math.min(r,g,b),h=0,s=0,l=(mx+mn)/2;
+    if(mx!==mn){var d=mx-mn;s=l>.5?d/(2-mx-mn):d/(mx+mn);
+      if(mx===r)h=(g-b)/d+(g<b?6:0);else if(mx===g)h=(b-r)/d+2;else h=(r-g)/d+4;h*=60;}
+    return [Math.round(h),Math.round(s*100),Math.round(l*100)];}
+  function l2r(h,s,l){h/=360;s/=100;l/=100;var c=(1-Math.abs(2*l-1))*s,x=c*(1-Math.abs((h/60)%2-1)),m=l-c/2,r,g,b;
+    if(h<60){r=c;g=x;b=0;}else if(h<120){r=x;g=c;b=0;}else if(h<180){r=0;g=c;b=x;}
+    else if(h<240){r=0;g=x;b=c;}else if(h<300){r=x;g=0;b=c;}else{r=c;g=0;b=x;}
+    return [Math.round((r+m)*255),Math.round((g+m)*255),Math.round((b+m)*255)];}
+  function set(hex){var rgb=h2r(hex);if(!rgb)return;var hsl=r2l(rgb[0],rgb[1],rgb[2]);
+    document.getElementById('ccPick').value=hex;
+    document.getElementById('ccHex').value=hex;
+    document.getElementById('ccR').value=rgb[0];document.getElementById('ccG').value=rgb[1];document.getElementById('ccB').value=rgb[2];
+    document.getElementById('ccH').value=hsl[0];document.getElementById('ccS').value=hsl[1];document.getElementById('ccL').value=hsl[2];
+    document.getElementById('ccPrev').style.background=hex;}
+  document.getElementById('ccPick').addEventListener('input',function(e){set(e.target.value);});
+  document.getElementById('ccHex').addEventListener('change',function(e){var v=e.target.value;if(!v.startsWith('#'))v='#'+v;set(v);});
+  ['ccR','ccG','ccB'].forEach(function(id){document.getElementById(id).addEventListener('change',function(){
+    set(r2h(+document.getElementById('ccR').value,+document.getElementById('ccG').value,+document.getElementById('ccB').value));});});
+  ['ccH','ccS','ccL'].forEach(function(id){document.getElementById(id).addEventListener('change',function(){
+    var rgb=l2r(+document.getElementById('ccH').value,+document.getElementById('ccS').value,+document.getElementById('ccL').value);
+    set(r2h(rgb[0],rgb[1],rgb[2]));});});
+  function cp(txt,btn){navigator.clipboard.writeText(txt);var o=btn.textContent;btn.textContent='Copied!';setTimeout(function(){btn.textContent=o;},1200);}
+  document.getElementById('ccCopyHex').addEventListener('click',function(){cp(document.getElementById('ccHex').value,this);});
+  document.getElementById('ccCopyRgb').addEventListener('click',function(){cp('rgb('+document.getElementById('ccR').value+', '+document.getElementById('ccG').value+', '+document.getElementById('ccB').value+')',this);});
+  document.getElementById('ccCopyHsl').addEventListener('click',function(){cp('hsl('+document.getElementById('ccH').value+', '+document.getElementById('ccS').value+'%, '+document.getElementById('ccL').value+'%)',this);});
+  document.getElementById('ccRand').addEventListener('click',function(){
+    set(r2h(Math.floor(Math.random()*256),Math.floor(Math.random()*256),Math.floor(Math.random()*256)));});
+  set('#4f46e5');
+})();
+</script>
+</body>
+</html>
