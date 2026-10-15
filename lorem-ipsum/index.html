@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->\n<script async src="https://www.googletagmanager.com/gtag/js?id=G-EZX4NHP5R1"></script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n  gtag('config', 'G-EZX4NHP5R1');\n</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EZX4NHP5R1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EZX4NHP5R1');
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lorem Ipsum Generator — Free Placeholder Text</title>
@@ -82,7 +89,9 @@ ZapTools</a>
   document.getElementById('liGo').addEventListener('click',function(){
     var t=document.getElementById('liType').value,n=Math.min(50,+document.getElementById('liN').value||1),out=[];
     for(var i=0;i<n;i++)out.push(t==='p'?para():t==='w'?W.slice(0,Math.min(n*8,W.length)).join(' '):sent());
-    document.getElementById('liOut').value=t==='w'?out[0]:out.join(t==='p'?'\n\n':' ');});
+    document.getElementById('liOut').value=t==='w'?out[0]:out.join(t==='p'?'
+
+':' ');});
   document.getElementById('liGo').click();
 })();
 </script>

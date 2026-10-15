@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->\n<script async src="https://www.googletagmanager.com/gtag/js?id=G-EZX4NHP5R1"></script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n  gtag('config', 'G-EZX4NHP5R1');\n</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EZX4NHP5R1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EZX4NHP5R1');
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>File Converter — TXT, CSV, JSON, DOCX, ZIP Online</title>
@@ -104,7 +111,9 @@ ZapTools</a>
     for(var i=0;i<t.length;i++){var c=t[i];
       if(q){if(c==='"'){if(t[i+1]==='"'){cell+='"';i++;}else q=false;}else cell+=c;}
       else{if(c==='"')q=true;else if(c===","){row.push(cell);cell="";}
-        else if(c==="\n"||c==="\r"){if(cell!==""||row.length){row.push(cell);rows.push(row);row=[];cell="";}if(c==="\r"&&t[i+1]==="\n")i++;}
+        else if(c==="
+"||c==="\r"){if(cell!==""||row.length){row.push(cell);rows.push(row);row=[];cell="";}if(c==="\r"&&t[i+1]==="
+")i++;}
         else cell+=c;}
     }
     if(cell!==""||row.length){row.push(cell);rows.push(row);}
@@ -121,8 +130,10 @@ ZapTools</a>
       if(Array.isArray(o)&&o.length&&typeof o[0]==="object"){
         var keys=Object.keys(o[0]);
         var lines=[keys.join(",")];
-        o.forEach(function(r){lines.push(keys.map(function(k){var v=String(r[k]==null?"":r[k]);return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;}).join(","));});
-        return lines.join("\n");
+        o.forEach(function(r){lines.push(keys.map(function(k){var v=String(r[k]==null?"":r[k]);return /[",
+]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;}).join(","));});
+        return lines.join("
+");
       }
       return JSON.stringify(o,null,2);
     }catch(e){return t;}
@@ -134,13 +145,19 @@ ZapTools</a>
       .replace(/^## (.*)$/gm,"<h2>$1</h2>").replace(/^# (.*)$/gm,"<h1>$1</h1>")
       .replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>").replace(/\*(.+?)\*/g,"<em>$1</em>")
       .replace(/`(.+?)`/g,"<code>$1</code>").replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2">$1</a>')
-      .replace(/^- (.*)$/gm,"<li>$1</li>").replace(/(<li>.*<\/li>\n?)+/g,"<ul>$&</ul>")
-      .replace(/\n\n/g,"</p><p>").replace(/^(.*)$/gm,"<p>$1</p>").replace(/<p><(h\d|ul|li)/g,"<$1").replace(/<\/(h\d|ul)><\/p>/g,"</$1>");
+      .replace(/^- (.*)$/gm,"<li>$1</li>").replace(/(<li>.*<\/li>
+?)+/g,"<ul>$&</ul>")
+      .replace(/
+
+/g,"</p><p>").replace(/^(.*)$/gm,"<p>$1</p>").replace(/<p><(h\d|ul|li)/g,"<$1").replace(/<\/(h\d|ul)><\/p>/g,"</$1>");
   }
   function htmlToText(t){
     var d=document.createElement("div");d.innerHTML=t;
     d.querySelectorAll("script,style").forEach(function(e){e.remove();});
-    return d.textContent.replace(/\n{3,}/g,"\n\n").trim();
+    return d.textContent.replace(/
+{3,}/g,"
+
+").trim();
   }
   function toTarget(text,ext,target){
     var plain=(ext==="html"||ext==="htm")?htmlToText(text):text;
@@ -153,7 +170,8 @@ ZapTools</a>
     }
     if(target==="csv")return {c:jsonToText(plain),m:"text/csv",e:"csv"};
     if(target==="html"){
-      var body=(ext==="md"||ext==="markdown")?mdToHtml(plain):esc(plain).replace(/\n/g,"<br>");
+      var body=(ext==="md"||ext==="markdown")?mdToHtml(plain):esc(plain).replace(/
+/g,"<br>");
       return {c:"<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>Converted</title></head><body>"+body+"</body></html>",m:"text/html",e:"html"};
     }
     return {c:plain,m:"text/plain",e:"txt"};

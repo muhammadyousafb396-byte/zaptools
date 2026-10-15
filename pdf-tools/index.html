@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->\n<script async src="https://www.googletagmanager.com/gtag/js?id=G-EZX4NHP5R1"></script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n  gtag('config', 'G-EZX4NHP5R1');\n</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EZX4NHP5R1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EZX4NHP5R1');
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PDF Tools — Merge, Images to PDF, Extract Text</title>
@@ -143,7 +150,9 @@ ZapTools</a>
       for(var p=1;p<=pdf.numPages;p++){
         var page=await pdf.getPage(p);
         var tc=await page.getTextContent();
-        full+=tc.items.map(function(it){return it.str;}).join(" ")+"\n\n";
+        full+=tc.items.map(function(it){return it.str;}).join(" ")+"
+
+";
         $("pdfTextMsg").textContent="Extracting… page "+p+"/"+pdf.numPages;
       }
       $("pdfTextOut").value=full.trim();

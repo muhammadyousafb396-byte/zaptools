@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->\n<script async src="https://www.googletagmanager.com/gtag/js?id=G-EZX4NHP5R1"></script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n  gtag('config', 'G-EZX4NHP5R1');\n</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EZX4NHP5R1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EZX4NHP5R1');
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Remove Duplicate Lines Online — Free Dedupe Tool</title>
@@ -83,14 +90,16 @@ banana</textarea></div>
 <script>
 (function(){
   document.getElementById('ddGo').addEventListener('click',function(){
-    var lines=document.getElementById('ddIn').value.split('\n');
+    var lines=document.getElementById('ddIn').value.split('
+');
     var cs=document.getElementById('ddCase').checked,seen={},out=[],dups=0;
     lines.forEach(function(l){
       if(document.getElementById('ddTrim').checked)l=l.trim();
       if(!l&&document.getElementById('ddBlank').checked)return;
       var k=cs?l:l.toLowerCase();
       if(seen[k]){dups++;return;}seen[k]=1;out.push(l);});
-    document.getElementById('ddOut').value=out.join('\n');
+    document.getElementById('ddOut').value=out.join('
+');
     document.getElementById('ddStat').textContent='✓ Removed '+dups+' duplicate line'+(dups===1?'':'s')+'. '+out.length+' unique lines remain.';
   });
 })();

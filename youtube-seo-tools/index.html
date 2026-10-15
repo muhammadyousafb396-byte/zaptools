@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->\n<script async src="https://www.googletagmanager.com/gtag/js?id=G-EZX4NHP5R1"></script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n  gtag('config', 'G-EZX4NHP5R1');\n</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EZX4NHP5R1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EZX4NHP5R1');
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>YouTube SEO Tools — Tags, Titles & Hashtags</title>
@@ -151,10 +158,22 @@ ZapTools</a>
     var topic=$("ysDescTopic").value.trim()||"this video";
     var ch=$("ysChannel").value.trim()||"my channel";
     $("ysDescOut").value=
-      topic.charAt(0).toUpperCase()+topic.slice(1)+" — everything you need to know!\n\n"+
-      "In this video I cover "+topic+" step by step. Watch till the end for the best tips.\n\n"+
-      "⏱ TIMESTAMPS\n00:00 Intro\n01:30 Main topic\n05:00 Tips & tricks\n08:00 Final thoughts\n\n"+
-      "🔔 Subscribe to "+ch+" for more videos like this!\n\n"+
+      topic.charAt(0).toUpperCase()+topic.slice(1)+" — everything you need to know!
+
+"+
+      "In this video I cover "+topic+" step by step. Watch till the end for the best tips.
+
+"+
+      "⏱ TIMESTAMPS
+00:00 Intro
+01:30 Main topic
+05:00 Tips & tricks
+08:00 Final thoughts
+
+"+
+      "🔔 Subscribe to "+ch+" for more videos like this!
+
+"+
       "#"+topic.replace(/[^a-zA-Z0-9 ]/g,"").split(" ").filter(Boolean).join("").slice(0,30).toLowerCase()+" #youtube #trending";
   });
   $("ysDescCopy").addEventListener("click",function(){

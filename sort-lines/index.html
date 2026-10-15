@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->\n<script async src="https://www.googletagmanager.com/gtag/js?id=G-EZX4NHP5R1"></script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n  gtag('config', 'G-EZX4NHP5R1');\n</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EZX4NHP5R1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EZX4NHP5R1');
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sort Lines Alphabetically Online — Free Tool</title>
@@ -80,12 +87,14 @@ cherry</textarea></div>
 <script>
 (function(){
   document.querySelectorAll('[data-s]').forEach(function(b){b.addEventListener('click',function(){
-    var lines=document.getElementById('slIn').value.split('\n'),m=b.dataset.s;
+    var lines=document.getElementById('slIn').value.split('
+'),m=b.dataset.s;
     if(m==='az')lines.sort(function(a,b2){return a.localeCompare(b2);});
     else if(m==='za')lines.sort(function(a,b2){return b2.localeCompare(a);});
     else if(m==='len')lines.sort(function(a,b2){return a.length-b2.length;});
     else{for(var i=lines.length-1;i>0;i--){var a=new Uint32Array(1);crypto.getRandomValues(a);var j=a[0]%(i+1);var t=lines[i];lines[i]=lines[j];lines[j]=t;}}
-    document.getElementById('slOut').value=lines.join('\n');});});
+    document.getElementById('slOut').value=lines.join('
+');});});
 })();
 </script>
 </body>
