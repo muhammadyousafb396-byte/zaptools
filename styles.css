@@ -57,7 +57,7 @@ a:hover{text-decoration:underline}
 .form-row{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;margin-bottom:16px}
 .field{display:flex;flex-direction:column;gap:6px;flex:1;min-width:150px}
 .field label{font-weight:700;font-size:.9rem}
-input[type=text],input[type=url],input[type=number],select,textarea{padding:11px 13px;border:1.5px solid var(--border);border-radius:9px;font-size:1rem;font-family:inherit;width:100%;background:#fff}
+input[type=text],input[type=url],input[type=email],input[type=number],select,textarea{padding:11px 13px;border:1.5px solid var(--border);border-radius:9px;font-size:1rem;font-family:inherit;width:100%;background:#fff}
 input:focus,select:focus,textarea:focus{outline:none;border-color:var(--indigo);box-shadow:0 0 0 3px rgba(79,70,229,.15)}
 textarea{min-height:120px;resize:vertical}
 .result-box{background:#f0f3ff;border:1.5px dashed var(--indigo);border-radius:10px;padding:18px;margin-top:16px;font-size:1.05rem}
