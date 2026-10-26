@@ -100,8 +100,10 @@ textarea{min-height:120px;resize:vertical}
 /* Misc */
 .drop-zone{border:2px dashed #b9c2e8;border-radius:12px;padding:34px 18px;text-align:center;background:#fafbff;cursor:pointer;transition:border-color .15s}
 .drop-zone:hover{border-color:var(--indigo)}
+.drop-zone:focus-visible{outline:none;border-color:var(--indigo);box-shadow:0 0 0 3px rgba(79,70,229,.15)}
+.drop-zone.drag-over{border-color:var(--indigo);background:#eef1ff}
 .drop-zone input{display:none}
-canvas.preview{max-width:100%;border-radius:10px;border:1px solid var(--border);margin-top:14px}
+canvas.preview{max-width:100%;height:auto;border-radius:10px;border:1px solid var(--border);margin-top:14px}
 .thumb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-top:16px}
 .thumb-card{background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden}
 .thumb-card img{width:100%;display:block}
@@ -121,8 +123,10 @@ table.rates th{background:#eef1ff;color:var(--indigo-dark)}
 @media(max-width:640px){
   .hero h1{font-size:1.65rem}
   .tool-hero h1{font-size:1.45rem}
-  .calc{grid-template-columns:repeat(4,1fr)}
+  .calc{grid-template-columns:repeat(5,1fr)}
+  .calc button{padding:12px 2px;font-size:.9rem}
   .calc button.eq{grid-column:span 2}
-  .nav-links{display:none}
+  .nav-inner{flex-wrap:wrap;gap:8px}
+  .nav-links{display:flex;flex-wrap:wrap}
   .tool-box{padding:18px}
 }

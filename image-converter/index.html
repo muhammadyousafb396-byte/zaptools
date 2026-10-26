@@ -36,7 +36,6 @@
     {"@type":"Question","name":"Are my images uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Conversion happens entirely in your browser."}}
   ]}
   </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3045520642994409" crossorigin="anonymous"></script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Image Converter", "url": "https://muhammadyousafb396-byte.github.io/zaptools/image-converter/", "description": "Free image converter: change PNG, JPG and WebP formats, resize and compress images in your browser. No upload, no signup, instant download.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
 </head>
 <body>
@@ -61,7 +60,7 @@ ZapTools</a>
       <img id="preview" class="preview" style="display:none;max-height:300px" alt="Image preview before conversion">
       <div class="form-row" style="margin-top:14px">
         <div class="field"><label for="fmt">Output format</label><select id="fmt"><option value="image/png">PNG</option><option value="image/jpeg">JPG</option><option value="image/webp">WebP</option></select></div>
-        <div class="field"><label for="quality">Quality (<span id="qVal">90</span>%)</label><input type="range" id="quality" min="10" max="100" value="90"></div>
+        <div class="field"><label for="quality">Quality (<span id="qVal">90</span>%) — applies to JPG/WebP</label><input type="range" id="quality" min="10" max="100" value="90"></div>
         <div class="field"><label for="maxW">Max width (px, 0 = original)</label><input type="number" id="maxW" value="0" min="0"></div>
       </div>
       <div class="form-row">
@@ -69,14 +68,13 @@ ZapTools</a>
       </div>
       <p class="status" id="icStatus"></p>
     </section>
-    <div class="ad-slot">Advertisement</div>
     <section class="prose">
       <h2>How to convert images</h2>
       <ol><li>Upload your image.</li><li>Choose output format (PNG for quality, WebP/JPG for smaller files).</li><li>Adjust quality and optional max width.</li><li>Click convert — the file downloads instantly.</li></ol>
     </section>
     <section class="faq"><h2 style="text-align:center;margin-bottom:16px">FAQs</h2><div class="prose">
       <details><summary>Which formats can I convert between?</summary><p>PNG, JPEG and WebP in any direction.</p></details>
-      <details><summary>Can I resize images too?</summary><p>Yes — set a max width or height, or keep original dimensions.</p></details>
+      <details><summary>Can I resize images too?</summary><p>Yes — set a max width, or keep original dimensions.</p></details>
       <details><summary>Are my images uploaded?</summary><p>No. Conversion happens entirely in your browser.</p></details>
     </div></section>
   </div>
@@ -100,11 +98,13 @@ ZapTools</a>
   dz.addEventListener('drop',function(e){e.preventDefault();if(e.dataTransfer.files[0])load(e.dataTransfer.files[0]);});
   fi.addEventListener('change',function(){if(fi.files[0])load(fi.files[0]);});
   function load(f){
+    if(!f.type.startsWith('image/')){document.getElementById('icStatus').textContent='Please upload an image file (PNG, JPG, WebP, GIF or BMP).';return;}
     var url=URL.createObjectURL(f);img.onload=function(){
       var pv=document.getElementById('preview');pv.src=url;pv.style.display='block';hasImg=true;
       document.getElementById('convBtn').disabled=false;
       document.getElementById('icStatus').textContent='Loaded: '+img.naturalWidth+'×'+img.naturalHeight+' px';
-    };img.src=url;
+    };img.onerror=function(){document.getElementById('icStatus').textContent='Could not read that image — try a PNG, JPG, WebP, GIF or BMP file.';};
+    img.src=url;
   }
   document.getElementById('convBtn').addEventListener('click',function(){
     if(!hasImg)return;
@@ -117,6 +117,7 @@ ZapTools</a>
     ctx.drawImage(img,0,0,w,h);
     var ext=fmt==='image/png'?'png':fmt==='image/jpeg'?'jpg':'webp';
     c.toBlob(function(b){
+      if(!b){document.getElementById('icStatus').textContent='Your browser could not encode that format — try PNG.';return;}
       var url=URL.createObjectURL(b);
       downloadFile(url,'converted.'+ext);
       document.getElementById('icStatus').textContent='✓ Converted! '+(b.size/1024).toFixed(1)+' KB downloaded as '+ext.toUpperCase();
@@ -124,10 +125,10 @@ ZapTools</a>
   });
 })();
 </script>
-<!-- Cookie consent banner (AdSense policy compliance) -->
+<!-- Cookie consent banner -->
 <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#fff;padding:14px 20px;z-index:9999;font-size:14px;box-shadow:0 -2px 10px rgba(0,0,0,.3);font-family:inherit;">
   <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
-    <span>We use cookies for analytics and ads. <a href="../privacy.html" style="color:#7aa2ff;">Learn more</a></span>
+    <span>We use cookies for analytics. <a href="../privacy.html" style="color:#7aa2ff;">Learn more</a></span>
     <button onclick="acceptCookies()" style="background:#4f7cff;color:#fff;border:none;padding:8px 24px;border-radius:6px;cursor:pointer;font-weight:600;font-size:14px;">Accept</button>
   </div>
 </div>

@@ -24,7 +24,6 @@
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="canonical" href="https://muhammadyousafb396-byte.github.io/zaptools/privacy.html">
   <link rel="stylesheet" href="styles.css">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3045520642994409" crossorigin="anonymous"></script>
 </head>
 <body>
 <header class="site-header"><div class="container nav-inner">
@@ -34,7 +33,7 @@
   <nav class="nav-links" aria-label="Main navigation"><a href="./">Home</a><a href="calculator/">Calculator</a><a href="image-to-text/">OCR</a><a href="image-converter/">Converter</a><a href="seo-checker/">SEO Checker</a><a href="about.html">About</a></nav>
 </div></header>
 <main>
-  <section class="tool-hero"><div class="container"><h1>Privacy Policy</h1><p>Last updated: October 13, 2026</p></div></section>
+  <section class="tool-hero"><div class="container"><h1>Privacy Policy</h1><p>Last updated: October 26, 2026</p></div></section>
   <div class="container"><div class="prose section">
     <h2>1. Our core promise</h2>
     <p>ZapTools is designed <strong>local-first</strong>: nearly every tool runs entirely in your browser with JavaScript. Files you open in our tools — images, videos, documents — are processed on your device and <strong>never uploaded to our servers</strong>, because we don't operate servers that receive them.</p>
@@ -42,18 +41,19 @@
     <ul>
       <li><strong>No accounts:</strong> we don't offer user accounts and store no names, emails or passwords.</li>
       <li><strong>No tool inputs stored:</strong> text you type, files you open and calculations you run stay in your browser's memory. The notepad tool uses your browser's <code>localStorage</code> on your own device.</li>
-      <li><strong>Analytics:</strong> we may use privacy-respecting analytics to count page views and understand which tools are popular. This data is aggregated and never linked to individuals.</li>
+      <li><strong>Analytics:</strong> we use Google Analytics 4 (measurement ID G-EZX4NHP5R1) to count page views and understand which tools are popular. Google Analytics collects aggregated, non-identifying usage data such as pages visited, approximate location and device type. See <a href="https://policies.google.com/privacy" rel="noopener">Google's Privacy Policy</a>; you can opt out with Google's <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">opt-out add-on</a>.</li>
       <li><strong>Contact emails:</strong> if you email us at muhammadyousafa396@gmail.com, we keep your message only as long as needed to respond.</li>
     </ul>
     <h2>3. Third-party services</h2>
     <ul>
       <li><strong>Currency rates:</strong> our converter fetches public exchange rates from open.er-api.com. Your request goes directly from your browser to their API.</li>
-      <li><strong>CDNs:</strong> open-source libraries (Tesseract.js, FFmpeg.wasm, QRCode.js) load from public CDNs (jsDelivr, unpkg, cdnjs).</li>
-      <li><strong>SEO checker / channel lookup:</strong> these tools route a fetch through corsproxy.io so your browser can read public page HTML. We don't log these requests.</li>
-      <li><strong>Advertising:</strong> we display ads via Google AdSense. Google may use cookies to personalize ads. You can opt out of personalized advertising at <a href="https://www.google.com/settings/ads" rel="noopener">google.com/settings/ads</a>. See Google's <a href="https://policies.google.com/privacy" rel="noopener">Privacy Policy</a>.</li>
+      <li><strong>CDNs:</strong> open-source libraries (Tesseract.js, FFmpeg.wasm, QRCode.js) load from public CDNs (jsDelivr, unpkg, cdnjs). Some tools also download data files on first use, such as OCR language data and the FFmpeg engine (~25 MB) — these downloads contain no personal information.</li>
+      <li><strong>SEO checker / channel lookup:</strong> these tools route a fetch through third-party proxies (corsproxy.io, allorigins.win, codetabs.com) so your browser can read public page HTML. We don't log these requests.</li>
+      <li><strong>Voice transcription:</strong> the audio-to-text tool uses your browser's built-in Web Speech API (Chrome/Edge). That service sends microphone audio to the browser vendor's recognition servers to produce the transcript; the transcript itself stays on the page.</li>
+      <li><strong>Advertising:</strong> ZapTools currently shows no advertisements and uses no advertising cookies. If advertising is added in future, this policy will be updated first.</li>
     </ul>
     <h2>4. Cookies</h2>
-    <p>We don't set our own tracking cookies. Third parties (AdSense, CDNs) may set cookies as described in their policies. The notepad's autosave uses <code>localStorage</code>, not cookies.</p>
+    <p>We don't set our own tracking cookies. Google Analytics may set cookies (_ga and related) as described in Google's policies. Our cookie-consent choice and the notepad's autosave use <code>localStorage</code> on your device, not cookies.</p>
     <h2>5. Children's privacy</h2>
     <p>ZapTools is a general-audience utility site not directed at children under 13. We knowingly collect no personal information from anyone, including children.</p>
     <h2>6. Your rights</h2>
@@ -72,10 +72,10 @@
   <div class="footer-bottom">© <span data-year></span> ZapTools. All rights reserved.</div>
 </div></footer>
 <script src="app.js"></script>
-<!-- Cookie consent banner (AdSense policy compliance) -->
+<!-- Cookie consent banner -->
 <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#fff;padding:14px 20px;z-index:9999;font-size:14px;box-shadow:0 -2px 10px rgba(0,0,0,.3);font-family:inherit;">
   <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
-    <span>We use cookies for analytics and ads. <a href="privacy.html" style="color:#7aa2ff;">Learn more</a></span>
+    <span>We use cookies for analytics. <a href="privacy.html" style="color:#7aa2ff;">Learn more</a></span>
     <button onclick="acceptCookies()" style="background:#4f7cff;color:#fff;border:none;padding:8px 24px;border-radius:6px;cursor:pointer;font-weight:600;font-size:14px;">Accept</button>
   </div>
 </div>

@@ -33,7 +33,6 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much can I compress an image?","acceptedAnswer":{"@type":"Answer","text":"Photos often shrink 60–80% at quality 80 with no visible difference. PNG screenshots compress best as WebP."}},{"@type":"Question","name":"Which formats are supported?","acceptedAnswer":{"@type":"Answer","text":"Upload JPG, PNG, WebP or GIF (first frame); export as JPG, PNG or WebP."}},{"@type":"Question","name":"Is my image uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No — compression runs entirely in your browser."}},{"@type":"Question","name":"What quality should I choose?","acceptedAnswer":{"@type":"Answer","text":"80 is the sweet spot for web photos. Go lower (60) for thumbnails, higher (90+) for print."}}]}
   </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3045520642994409" crossorigin="anonymous"></script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Image Compressor", "url": "https://muhammadyousafb396-byte.github.io/zaptools/image-compressor/", "description": "Free image compressor: shrink JPG, PNG, WebP photos with a quality slider. See before/after sizes — private, in-browser.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
 </head>
 <body>
@@ -71,7 +70,6 @@ ZapTools</a>
       </div>
       <div class="form-row" style="margin-top:12px"><button class="btn btn-grad" id="icDl" disabled>⬇️ Download Compressed</button></div>
     </section>
-    <div class="ad-slot">Advertisement</div>
     <section class="prose">
       <h2>Why compress images?</h2>
       <p>Large photos slow down websites, eat mobile data and hit email attachment limits. Compressing at quality 80 typically cuts file size by 60–80% with no visible difference.</p>
@@ -104,6 +102,7 @@ ZapTools</a>
   $("icQ").addEventListener("input",function(){$("icQVal").textContent=this.value;});
   $("icFile").addEventListener("change",function(){
     var f=this.files[0];if(!f)return;
+    if(!f.type.startsWith("image/")){$("icMsg").textContent="Please upload an image file (JPG, PNG, WebP or GIF).";return;}
     outBlob=null;$("icDl").disabled=true;
     var url=URL.createObjectURL(f);
     var im=new Image();
@@ -111,6 +110,7 @@ ZapTools</a>
       $("icOrigSize").textContent="("+fmt(f.size)+")";
       $("icOut").style.display="none";$("icNewSize").textContent="";
       $("icMsg").textContent="✓ Loaded — adjust settings and compress.";};
+    im.onerror=function(){$("icMsg").textContent="Could not read that image — try a JPG, PNG, WebP or GIF file.";};
     im.src=url;
   });
   $("icGo").addEventListener("click",function(){
@@ -124,6 +124,7 @@ ZapTools</a>
     if(mime==="image/jpeg"){ctx.fillStyle="#fff";ctx.fillRect(0,0,w,h);}
     ctx.drawImage(imgObj,0,0,w,h);
     c.toBlob(function(b){
+      if(!b){$("icMsg").textContent="Your browser could not encode that format — try JPEG or PNG.";return;}
       outBlob=b;
       $("icOut").src=URL.createObjectURL(b);$("icOut").style.display="block";
       $("icNewSize").textContent="("+fmt(b.size)+")";
@@ -145,10 +146,10 @@ ZapTools</a>
   });
 })();
 </script>
-<!-- Cookie consent banner (AdSense policy compliance) -->
+<!-- Cookie consent banner -->
 <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#fff;padding:14px 20px;z-index:9999;font-size:14px;box-shadow:0 -2px 10px rgba(0,0,0,.3);font-family:inherit;">
   <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
-    <span>We use cookies for analytics and ads. <a href="../privacy.html" style="color:#7aa2ff;">Learn more</a></span>
+    <span>We use cookies for analytics. <a href="../privacy.html" style="color:#7aa2ff;">Learn more</a></span>
     <button onclick="acceptCookies()" style="background:#4f7cff;color:#fff;border:none;padding:8px 24px;border-radius:6px;cursor:pointer;font-weight:600;font-size:14px;">Accept</button>
   </div>
 </div>

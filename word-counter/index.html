@@ -33,7 +33,6 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is there a character limit?","acceptedAnswer":{"@type":"Answer","text":"No practical limit \u2014 the counter handles very long documents smoothly."}},{"@type":"Question","name":"How is reading time calculated?","acceptedAnswer":{"@type":"Answer","text":"Words divided by 200 (average words per minute), rounded up to the nearest minute."}},{"@type":"Question","name":"Is my text uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Counting happens entirely in your browser."}}]}
   </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3045520642994409" crossorigin="anonymous"></script>
   
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Word Counter", "url": "https://muhammadyousafb396-byte.github.io/zaptools/word-counter/", "description": "Free word counter: count words, characters, sentences and paragraphs with live reading time. Perfect for essays, SEO and social posts.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
 </head>
@@ -58,7 +57,6 @@ ZapTools</a>
       </div>
       <div class="result-box" id="wcOut">Start typing to see counts…</div>
     </section>
-    <div class="ad-slot">Advertisement</div>
     <section class="prose">
       <h2>Why count words?</h2>
       <p>Writers, students and SEO professionals all work to length targets — essays, meta descriptions (under 160 characters), tweets and product copy. Live counts keep you on target without guessing.</p>
@@ -89,9 +87,7 @@ ZapTools</a>
     var s=ta.value,words=(s.match(/\S+/g)||[]).length;
     var chars=s.length,noSpace=s.replace(/\s/g,'').length;
     var sent=(s.match(/[^.!?]+[.!?]+/g)||[]).length;
-    var para=s.split(/
-\s*
-/).filter(function(p){return p.trim();}).length;
+    var para=s.split(/\n\s*\n/).filter(function(p){return p.trim();}).length;
     var read=Math.max(1,Math.ceil(words/200));
     document.getElementById('wcOut').innerHTML=
       '<strong>'+words+'</strong> words · <strong>'+chars+'</strong> characters · <strong>'+noSpace+'</strong> w/o spaces<br>'+
@@ -99,10 +95,10 @@ ZapTools</a>
   });
 })();
 </script>
-<!-- Cookie consent banner (AdSense policy compliance) -->
+<!-- Cookie consent banner -->
 <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#fff;padding:14px 20px;z-index:9999;font-size:14px;box-shadow:0 -2px 10px rgba(0,0,0,.3);font-family:inherit;">
   <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
-    <span>We use cookies for analytics and ads. <a href="../privacy.html" style="color:#7aa2ff;">Learn more</a></span>
+    <span>We use cookies for analytics. <a href="../privacy.html" style="color:#7aa2ff;">Learn more</a></span>
     <button onclick="acceptCookies()" style="background:#4f7cff;color:#fff;border:none;padding:8px 24px;border-radius:6px;cursor:pointer;font-weight:600;font-size:14px;">Accept</button>
   </div>
 </div>

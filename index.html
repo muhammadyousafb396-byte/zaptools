@@ -12,16 +12,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ZapTools — Free Online Tools: Converter, Calculator, OCR & More</title>
-  <meta name="description" content="ZapTools offers 50 free online tools: currency converter, calculators, OCR, image tools, SEO checker & more. No signup, private.">
+  <meta name="description" content="ZapTools offers 59 free online tools: currency converter, calculators, OCR, image tools, SEO checker & more. No signup, private.">
   <meta name="keywords" content="free online tools, currency converter, scientific calculator, image to text, ocr online, text to image, video to audio, image converter, youtube thumbnail downloader, seo checker">
   <meta property="og:title" content="ZapTools — Free Online Tools: Converter, Calculator, OCR & More">
-  <meta property="og:description" content="50 free online tools that run in your browser. Currency converter, scientific calculator, OCR, image tools, SEO checker & more.">
+  <meta property="og:description" content="59 free online tools that run in your browser. Currency converter, scientific calculator, OCR, image tools, SEO checker & more.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://muhammadyousafb396-byte.github.io/zaptools/">
   <meta property="og:image" content="https://muhammadyousafb396-byte.github.io/zaptools/assets/og-cover.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="ZapTools — Free Online Tools">
-  <meta name="twitter:description" content="50 free online tools: currency converter, calculator, OCR, image tools, SEO checker. No signup needed.">
+  <meta name="twitter:description" content="59 free online tools: currency converter, calculator, OCR, image tools, SEO checker. No signup needed.">
   <meta name="twitter:image" content="https://muhammadyousafb396-byte.github.io/zaptools/assets/og-cover.png">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="canonical" href="https://muhammadyousafb396-byte.github.io/zaptools/">
@@ -31,7 +31,7 @@
   {"@context":"https://schema.org","@type":"WebSite","name":"ZapTools","url":"https://muhammadyousafb396-byte.github.io/zaptools/","description":"Free online tools: currency converter, scientific calculator, image-to-text OCR, text-to-image maker, video-to-audio, image converter, YouTube thumbnail viewer and SEO checker."}
   </script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebApplication","name":"ZapTools","url":"https://muhammadyousafb396-byte.github.io/zaptools/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"8 free browser-based online tools with no signup required."}
+  {"@context":"https://schema.org","@type":"WebApplication","name":"ZapTools","url":"https://muhammadyousafb396-byte.github.io/zaptools/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"59 free browser-based online tools with no signup required."}
   </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
@@ -42,7 +42,6 @@
   ]}
   </script>
   <!-- Google AdSense (Publisher ID: ca-pub-3045520642994409) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3045520642994409" crossorigin="anonymous"></script>
 </head>
 <body>
 <header class="site-header">
@@ -67,7 +66,7 @@
   <section class="hero">
     <div class="container">
       <h1>Free Online Tools That Work Instantly</h1>
-      <p class="sub">Currency converter, scientific calculator, OCR, image tools, SEO checker &amp; more — 100% free, no signup, everything runs privately in your browser.</p>
+      <p class="sub">Currency converter, scientific calculator, OCR, image tools, SEO checker &amp; more — 100% free, no signup, most tools run privately in your browser.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#converter">Convert Currency Now</a>
         <a class="btn btn-ghost" href="#tools">Browse All Tools</a>
@@ -88,14 +87,14 @@
       </div>
       <div class="result-box" id="ccResult" role="status">Enter an amount to convert…</div>
       <p class="status" id="ccStatus">Loading live rates…</p>
+      <button class="btn btn-ghost" id="ccRetry" style="display:none;margin-top:8px">↻ Retry loading rates</button>
       <div style="overflow-x:auto"><table class="rates" id="ratesTable" aria-label="Popular exchange rates"></table></div>
     </section>
 
-    <div class="ad-slot">Advertisement</div>
 
     <section class="section" id="tools">
       <h2>All Free Tools</h2>
-      <p class="lede">Fifty powerful utilities. Click any tool to start using it immediately — no account needed.</p>
+      <p class="lede">Fifty-nine powerful utilities. Click any tool to start using it immediately — no account needed.</p>
             <h3 style="margin:26px 0 14px;font-size:1.25rem">Finance Tools</h3>
       <div class="tool-grid">
         <a class="tool-card" href="./"><span class="icon">💱</span><h3>Currency Converter</h3><p>Live rates for 160+ currencies with instant conversion.</p></a>
@@ -210,7 +209,7 @@
       <h2>Frequently Asked Questions</h2>
       <div class="prose">
         <details><summary>Are ZapTools really free?</summary><p>Yes. Every tool on ZapTools is 100% free with no signup, no watermarks and no usage limits for normal use.</p></details>
-        <details><summary>Do my files get uploaded to a server?</summary><p>No. All tools run entirely in your browser using JavaScript. Your images and videos never leave your device.</p></details>
+        <details><summary>Do my files get uploaded to a server?</summary><p>No. Most tools run entirely in your browser using JavaScript. Your images and videos never leave your device. Two exceptions: the currency converter fetches public exchange rates from an external API, and the SEO checker and YouTube monetization checker fetch the public page you ask them to audit through a third-party proxy.</p></details>
         <details><summary>Which tools does ZapTools offer?</summary><p>Currency converter, scientific calculator, image-to-text OCR, text-to-image generator, video-to-audio extractor, image format converter, YouTube thumbnail viewer and a website SEO checker.</p></details>
         <details><summary>Do the tools work on mobile?</summary><p>Yes. Every tool is fully responsive and works on phones, tablets and desktops.</p></details>
       </div>
@@ -235,22 +234,24 @@
 <script src="app.js"></script>
 <script>
 (function(){
-  var FALLBACK={USD:1,EUR:0.92,GBP:0.79,PKR:278.5,INR:83.2,AED:3.67,SAR:3.75,CAD:1.36,AUD:1.52,CNY:7.24,JPY:149.8,TRY:32.4,BDT:117.5};
   var NAMES={USD:"US Dollar",EUR:"Euro",GBP:"British Pound",PKR:"Pakistani Rupee",INR:"Indian Rupee",AED:"UAE Dirham",SAR:"Saudi Riyal",CAD:"Canadian Dollar",AUD:"Australian Dollar",CNY:"Chinese Yuan",JPY:"Japanese Yen",TRY:"Turkish Lira",BDT:"Bangladeshi Taka"};
   var rates=null,lastUpdate="";
   var fromEl=document.getElementById('fromCur'),toEl=document.getElementById('toCur');
+  var statusEl=document.getElementById('ccStatus'),retryEl=document.getElementById('ccRetry');
   function fillSelects(list){
     var opts=list.map(function(c){return '<option value="'+c+'">'+c+' — '+(NAMES[c]||c)+'</option>';}).join('');
     fromEl.innerHTML=opts;toEl.innerHTML=opts;fromEl.value="USD";toEl.value="PKR";
   }
   function convert(){
-    var amt=parseFloat(document.getElementById('amount').value);
     var box=document.getElementById('ccResult');
-    if(!rates||isNaN(amt)){box.textContent="Enter an amount to convert…";return;}
+    if(!rates){box.textContent="Live rates are not loaded yet — please wait or retry below.";return;}
+    var amt=parseFloat(document.getElementById('amount').value);
+    if(isNaN(amt)){box.textContent="Enter an amount to convert…";return;}
+    if(amt<0){box.textContent="Please enter an amount of 0 or more.";return;}
     var f=fromEl.value,t=toEl.value;
     if(!rates[f]||!rates[t]){box.textContent="Rate unavailable for this pair.";return;}
     var res=amt/rates[f]*rates[t];
-    box.innerHTML="<strong>"+amt.toLocaleString()+" "+f+"</strong> = <strong style='color:var(--indigo-dark)'>"+res.toLocaleString(undefined,{maximumFractionDigits:2})+" "+t+"</strong><br><small style='color:var(--muted)'>1 "+f+" = "+(rates[t]/rates[f]).toFixed(4)+" "+t+(lastUpdate?" · Updated "+lastUpdate:"")+"</small>";
+    box.innerHTML="<strong>"+amt.toLocaleString()+" "+f+"</strong> = <strong style='color:var(--indigo-dark)'>"+res.toLocaleString(undefined,{maximumFractionDigits:2})+" "+t+"</strong><br><small style='color:var(--muted)'>1 "+f+" = "+(rates[t]/rates[f]).toFixed(4)+" "+t+" · Live rates"+(lastUpdate?" · Updated "+lastUpdate:"")+"</small>";
   }
   function popular(){
     var t=document.getElementById('ratesTable');
@@ -259,23 +260,42 @@
       return "<tr><td>"+r[0]+" — "+r[1]+"</td><td>"+(rates&&rates[r[0]]?rates[r[0]].toFixed(4):"—")+"</td></tr>";
     }).join('');
   }
+  function loadRates(){
+    statusEl.textContent="Loading live rates…";
+    retryEl.style.display='none';
+    var ctrl=new AbortController();
+    var timer=setTimeout(function(){ctrl.abort();},10000);
+    fetch("https://open.er-api.com/v6/latest/USD",{signal:ctrl.signal}).then(function(r){
+      if(!r.ok)throw new Error("bad response");
+      return r.json();
+    }).then(function(d){
+      clearTimeout(timer);
+      if(!(d&&d.result==="success"&&d.rates))throw new Error("bad data");
+      rates=d.rates;
+      lastUpdate=d.time_last_update_utc?d.time_last_update_utc.split(" ").slice(0,4).join(" "):"";
+      statusEl.textContent="✓ Live rates loaded"+(lastUpdate?" — updated "+lastUpdate:"")+".";
+      fillSelects(Object.keys(rates).sort());convert();popular();
+    }).catch(function(){
+      clearTimeout(timer);
+      /* No stale fallback rates: never present old or guessed rates as live. */
+      rates=null;
+      statusEl.textContent="✕ Live rates unavailable — check your connection and try again. No conversion is shown until live rates load.";
+      retryEl.style.display='inline-block';
+      document.getElementById('ccResult').textContent="Live rates are not loaded yet — please wait or retry below.";
+      document.getElementById('ratesTable').innerHTML="";
+    });
+  }
   document.getElementById('amount').addEventListener('input',convert);
   fromEl.addEventListener('change',convert);toEl.addEventListener('change',convert);
   document.getElementById('swapBtn').addEventListener('click',function(){var v=fromEl.value;fromEl.value=toEl.value;toEl.value=v;convert();});
-  fetch("https://open.er-api.com/v6/latest/USD").then(function(r){return r.json();}).then(function(d){
-    if(d&&d.result==="success"&&d.rates){rates=d.rates;lastUpdate=d.time_last_update_utc?d.time_last_update_utc.split(" ").slice(0,4).join(" "):"";document.getElementById('ccStatus').textContent="✓ Live rates loaded.";}
-    else{throw 0;}
-  }).catch(function(){
-    rates=FALLBACK;document.getElementById('ccStatus').textContent="Showing reference rates (live feed unavailable).";
-  }).then(function(){
-    fillSelects(Object.keys(rates).sort());convert();popular();
-  });
+  retryEl.addEventListener('click',loadRates);
+  loadRates();
 })();
 </script>
-<!-- Cookie consent banner (AdSense policy compliance) -->
+<!-- Cookie consent banner -->
 <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#fff;padding:14px 20px;z-index:9999;font-size:14px;box-shadow:0 -2px 10px rgba(0,0,0,.3);font-family:inherit;">
   <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
-    <span>We use cookies for analytics and ads. <a href="privacy.html" style="color:#7aa2ff;">Learn more</a></span>
+    <span>We use cookies for analytics. <a href="privacy.html" style="color:#7aa2ff;">Learn more</a></span>
     <button onclick="acceptCookies()" style="background:#4f7cff;color:#fff;border:none;padding:8px 24px;border-radius:6px;cursor:pointer;font-weight:600;font-size:14px;">Accept</button>
   </div>
 </div>

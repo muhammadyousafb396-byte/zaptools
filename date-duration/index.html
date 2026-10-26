@@ -33,7 +33,6 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does it handle leap years?","acceptedAnswer":{"@type":"Answer","text":"Yes \u2014 calculations use real calendar dates, so Feb 29 is counted correctly."}},{"@type":"Question","name":"What does inclusive mean?","acceptedAnswer":{"@type":"Answer","text":"Inclusive counts both endpoints: Jan 1 to Jan 1 inclusive = 1 day; exclusive = 0 days."}},{"@type":"Question","name":"Can the end date be before the start?","acceptedAnswer":{"@type":"Answer","text":"Yes \u2014 you'll get a negative day count showing the gap backwards."}}]}
   </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3045520642994409" crossorigin="anonymous"></script>
   
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Date Duration Calculator", "url": "https://muhammadyousafb396-byte.github.io/zaptools/date-duration/", "description": "Calculate days, weeks and months between any two dates. Free date duration calculator with inclusive counting option.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
 </head>
@@ -58,7 +57,6 @@ ZapTools</a>
       <div class="form-row"><label><input type="checkbox" id="ddIncl"> Count both start and end dates (inclusive)</label></div>
       <div class="result-box" id="ddOut">Pick two dates…</div>
     </section>
-    <div class="ad-slot">Advertisement</div>
     <section class="prose">
       <h2>Counting days between dates</h2>
       <p>Useful for project timelines, pregnancy weeks, visa stays and event countdowns. Toggle <em>inclusive</em> counting when both the start and end day should count (common for bookings).</p>
@@ -91,10 +89,10 @@ ZapTools</a>
   ['ddFrom','ddTo','ddIncl'].forEach(function(id){document.getElementById(id).addEventListener('change',upd);});upd();
 })();
 </script>
-<!-- Cookie consent banner (AdSense policy compliance) -->
+<!-- Cookie consent banner -->
 <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#fff;padding:14px 20px;z-index:9999;font-size:14px;box-shadow:0 -2px 10px rgba(0,0,0,.3);font-family:inherit;">
   <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
-    <span>We use cookies for analytics and ads. <a href="../privacy.html" style="color:#7aa2ff;">Learn more</a></span>
+    <span>We use cookies for analytics. <a href="../privacy.html" style="color:#7aa2ff;">Learn more</a></span>
     <button onclick="acceptCookies()" style="background:#4f7cff;color:#fff;border:none;padding:8px 24px;border-radius:6px;cursor:pointer;font-weight:600;font-size:14px;">Accept</button>
   </div>
 </div>

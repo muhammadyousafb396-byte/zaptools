@@ -33,7 +33,6 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why did the fetch fail?","acceptedAnswer":{"@type":"Answer","text":"Some sites block proxy fetching or need JavaScript rendering. Try the site's homepage or a simpler page."}},{"@type":"Question","name":"Is a 100 score a ranking guarantee?","acceptedAnswer":{"@type":"Answer","text":"No \u2014 on-page basics are necessary but not sufficient; content quality and backlinks matter more."}},{"@type":"Question","name":"Is my audited URL stored?","acceptedAnswer":{"@type":"Answer","text":"No. The URL is fetched live and nothing is saved."}}]}
   </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3045520642994409" crossorigin="anonymous"></script>
   
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Website SEO Checker", "url": "https://muhammadyousafb396-byte.github.io/zaptools/seo-checker/", "description": "Free SEO checker: audit any webpage's title, meta description, headings, images and links with an instant 0–100 score. No signup.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
 </head>
@@ -57,16 +56,15 @@ ZapTools</a>
       </div>
       <p class="status" id="seoMsg"></p>
       <div id="seoOut" style="display:none">
-        <div class="score-ring" id="seoScore">0</div>
+        <div class="score-ring" id="seoScore">–</div>
         <ul class="check-list" id="seoList"></ul>
       </div>
     </section>
-    <div class="ad-slot">Advertisement</div>
     <section class="prose">
       <h2>What we check</h2>
       <p>On-page SEO fundamentals: title tag presence and length, meta description, single H1, heading structure, image alt attributes, Open Graph tags, canonical URL, mobile viewport, link count and content depth. Each factor is weighted into a 0–100 score.</p>
       <h3>Limitations</h3>
-      <p>We analyze the static HTML — JavaScript-rendered content, page speed, backlinks and Core Web Vitals need dedicated tools like PageSpeed Insights and Search Console.</p>
+      <p>We analyze the static HTML — JavaScript-rendered content, page speed, backlinks and Core Web Vitals need dedicated tools like PageSpeed Insights and Search Console. Note: to read another site's HTML, your browser fetches it through a third-party proxy (corsproxy.io), so the audited page's HTML passes through that service. A failed fetch is reported as an error, never as a score of 0.</p>
     </section>
     <section class="faq"><h2 style="text-align:center;margin-bottom:16px">Frequently Asked Questions</h2><div class="prose">
       <details><summary>Why did the fetch fail?</summary><p>Some sites block proxy fetching or need JavaScript rendering. Try the site's homepage or a simpler page.</p></details>
@@ -87,51 +85,65 @@ ZapTools</a>
 <script src="../app.js"></script>
 <script>
 (function(){
+  function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
   function li(ok,txt,warn){return '<li class="'+(ok?'pass':warn?'warn':'fail')+'">'+txt+'</li>';}
-  document.getElementById('seoGo').addEventListener('click',async function(){
+  function runAudit(){
     var u=document.getElementById('seoUrl').value.trim(),msg=document.getElementById('seoMsg');
     if(!/^https?:\/\//i.test(u))u='https://'+u;
+    try{new URL(u);}catch(e){msg.textContent='✕ Please enter a valid URL (example: https://example.com).';return;}
     msg.textContent='Fetching and analyzing…';
     document.getElementById('seoOut').style.display='none';
-    try{
-      var r=await fetch('https://corsproxy.io/?url='+encodeURIComponent(u));
-      if(!r.ok)throw 0;
-      var t=await r.text(),doc=new DOMParser().parseFromString(t,'text/html');
-      var checks=[],score=0;
-      function add(ok,txt,warn,pts){checks.push(li(ok,txt,warn));if(ok)score+=pts;}
-      var title=(doc.querySelector('title')||{}).textContent||'';
-      add(title.length>0,'Title tag present: "'+title.slice(0,70)+(title.length>70?'…':'')+'"',false,12);
-      add(title.length>=30&&title.length<=60,'Title length '+title.length+' chars (ideal 30–60)',title.length>0,8);
-      var md=doc.querySelector('meta[name="description"]');
-      add(!!md,'Meta description present',false,10);
-      add(md&&md.content.length>=70&&md.content.length<=160,'Meta description '+(md?md.content.length:0)+' chars (ideal 70–160)',!!md,8);
-      var h1s=doc.querySelectorAll('h1').length;
-      add(h1s===1,'Exactly one H1 heading ('+h1s+' found)',h1s>0,10);
-      add(doc.querySelectorAll('h2').length>0,'H2 subheadings used ('+doc.querySelectorAll('h2').length+')',false,6);
-      var imgs=doc.querySelectorAll('img'),noAlt=0;
-      imgs.forEach(function(i){if(!i.alt)noAlt++;});
-      add(imgs.length===0||noAlt===0,'Images: '+imgs.length+' found, '+noAlt+' missing alt text',imgs.length>0,8);
-      add(!!doc.querySelector('meta[property="og:title"]'),'Open Graph tags present',false,6);
-      add(!!doc.querySelector('link[rel="canonical"]'),'Canonical URL set',false,6);
-      add(!!doc.querySelector('meta[name="viewport"]'),'Mobile viewport meta tag',false,8);
-      var links=doc.querySelectorAll('a[href]').length;
-      add(links>0,links+' links found on page',false,4);
-      var words=(doc.body?doc.body.innerText:'').split(/\s+/).filter(Boolean).length;
-      add(words>=300,'Content: ~'+words+' words '+(words>=300?'(good)':'(thin — aim for 300+)'),words>0,4);
-      score=Math.min(100,score);
-      var ring=document.getElementById('seoScore');
-      ring.textContent=score;ring.style.background=score>=80?'#16a34a':score>=50?'#d97706':'#dc2626';
-      document.getElementById('seoList').innerHTML=checks.join('');
-      document.getElementById('seoOut').style.display='block';
-      msg.textContent='✓ Audit complete for '+u;
-    }catch(e){msg.textContent='✕ Could not fetch that URL. The site may block proxies or require JavaScript.';}
-  });
+    var ctrl=new AbortController();
+    var timer=setTimeout(function(){ctrl.abort();},20000);
+    fetch('https://corsproxy.io/?url='+encodeURIComponent(u),{signal:ctrl.signal})
+      .then(function(r){if(!r.ok)throw new Error('http '+r.status);return r.text();})
+      .then(function(t){
+        clearTimeout(timer);
+        var doc=new DOMParser().parseFromString(t,'text/html');
+        var checks=[],score=0;
+        function add(ok,txt,warn,pts){checks.push(li(ok,txt,warn));if(ok)score+=pts;}
+        var title=(doc.querySelector('title')||{}).textContent||'';
+        add(title.length>0,'Title tag present: "'+esc(title.slice(0,70))+(title.length>70?'…':'')+'"',false,14);
+        add(title.length>=30&&title.length<=60,'Title length '+title.length+' chars (ideal 30–60)',title.length>0,8);
+        var md=doc.querySelector('meta[name="description"]');
+        add(!!md,'Meta description present',false,12);
+        add(md&&md.content.length>=70&&md.content.length<=160,'Meta description '+(md?md.content.length:0)+' chars (ideal 70–160)',!!md,8);
+        var h1s=doc.querySelectorAll('h1').length;
+        add(h1s===1,'Exactly one H1 heading ('+h1s+' found)',h1s>0,12);
+        add(doc.querySelectorAll('h2').length>0,'H2 subheadings used ('+doc.querySelectorAll('h2').length+')',false,6);
+        var imgs=doc.querySelectorAll('img'),noAlt=0;
+        imgs.forEach(function(i){if(!i.alt)noAlt++;});
+        add(imgs.length===0||noAlt===0,'Images: '+imgs.length+' found, '+noAlt+' missing alt text',imgs.length>0,10);
+        add(!!doc.querySelector('meta[property="og:title"]'),'Open Graph tags present',false,6);
+        add(!!doc.querySelector('link[rel="canonical"]'),'Canonical URL set',false,6);
+        add(!!doc.querySelector('meta[name="viewport"]'),'Mobile viewport meta tag',false,8);
+        var links=doc.querySelectorAll('a[href]').length;
+        add(links>0,links+' links found on page',false,4);
+        var words=(doc.body?((doc.body.innerText||doc.body.textContent)||'').split(/\s+/).filter(Boolean).length:0);
+        add(words>=300,'Content: ~'+words+' words '+(words>=300?'(good)':'(thin — aim for 300+)'),words>0,6);
+        score=Math.min(100,score);
+        var ring=document.getElementById('seoScore');
+        ring.textContent=score;ring.style.background=score>=80?'#16a34a':score>=50?'#d97706':'#dc2626';
+        document.getElementById('seoList').innerHTML=checks.join('');
+        document.getElementById('seoOut').style.display='block';
+        msg.textContent='✓ Audit complete for '+u;
+      })
+      .catch(function(e){
+        clearTimeout(timer);
+        document.getElementById('seoOut').style.display='none';
+        msg.textContent=(e&&e.name==='AbortError')
+          ?'✕ Fetch timed out after 20 seconds. The site may be slow or block proxies — try its homepage or a simpler page.'
+          :'✕ Could not fetch that URL. The site may block proxies or require JavaScript. (No score is shown for a failed fetch.)';
+      });
+  }
+  document.getElementById('seoGo').addEventListener('click',runAudit);
+  document.getElementById('seoUrl').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();runAudit();}});
 })();
 </script>
-<!-- Cookie consent banner (AdSense policy compliance) -->
+<!-- Cookie consent banner -->
 <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#fff;padding:14px 20px;z-index:9999;font-size:14px;box-shadow:0 -2px 10px rgba(0,0,0,.3);font-family:inherit;">
   <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
-    <span>We use cookies for analytics and ads. <a href="../privacy.html" style="color:#7aa2ff;">Learn more</a></span>
+    <span>We use cookies for analytics. <a href="../privacy.html" style="color:#7aa2ff;">Learn more</a></span>
     <button onclick="acceptCookies()" style="background:#4f7cff;color:#fff;border:none;padding:8px 24px;border-radius:6px;cursor:pointer;font-weight:600;font-size:14px;">Accept</button>
   </div>
 </div>

@@ -33,7 +33,6 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why not use real text?","acceptedAnswer":{"@type":"Answer","text":"Readable draft copy biases design feedback; lorem ipsum keeps focus on layout."}},{"@type":"Question","name":"Can I use it commercially?","acceptedAnswer":{"@type":"Answer","text":"Yes \u2014 lorem ipsum is public domain."}},{"@type":"Question","name":"How much should I generate?","acceptedAnswer":{"@type":"Answer","text":"Match your final content length so spacing stays realistic."}}]}
   </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3045520642994409" crossorigin="anonymous"></script>
   
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Lorem Ipsum Generator", "url": "https://muhammadyousafb396-byte.github.io/zaptools/lorem-ipsum/", "description": "Generate lorem ipsum placeholder text: choose paragraphs, words or sentences. Free, instant, copy with one click.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
 </head>
@@ -59,7 +58,6 @@ ZapTools</a>
       <div class="field"><label for="liOut">Result</label><textarea id="liOut" rows="10" readonly></textarea></div>
       <div class="form-row"><button class="btn btn-ghost" onclick="copyText('liOut',this)">📋 Copy</button></div>
     </section>
-    <div class="ad-slot">Advertisement</div>
     <section class="prose">
       <h2>What is lorem ipsum?</h2>
       <p>Scrambled Latin used since the 1500s as placeholder text. Designers use it to show layouts without readable content distracting reviewers — the word shapes mimic real copy.</p>
@@ -90,16 +88,14 @@ ZapTools</a>
   document.getElementById('liGo').addEventListener('click',function(){
     var t=document.getElementById('liType').value,n=Math.min(50,+document.getElementById('liN').value||1),out=[];
     for(var i=0;i<n;i++)out.push(t==='p'?para():t==='w'?W.slice(0,Math.min(n*8,W.length)).join(' '):sent());
-    document.getElementById('liOut').value=t==='w'?out[0]:out.join(t==='p'?'
-
-':' ');});
+    document.getElementById('liOut').value=t==='w'?out[0]:out.join(t==='p'?'\n\n':' ');});
   document.getElementById('liGo').click();
 })();
 </script>
-<!-- Cookie consent banner (AdSense policy compliance) -->
+<!-- Cookie consent banner -->
 <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#fff;padding:14px 20px;z-index:9999;font-size:14px;box-shadow:0 -2px 10px rgba(0,0,0,.3);font-family:inherit;">
   <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
-    <span>We use cookies for analytics and ads. <a href="../privacy.html" style="color:#7aa2ff;">Learn more</a></span>
+    <span>We use cookies for analytics. <a href="../privacy.html" style="color:#7aa2ff;">Learn more</a></span>
     <button onclick="acceptCookies()" style="background:#4f7cff;color:#fff;border:none;padding:8px 24px;border-radius:6px;cursor:pointer;font-weight:600;font-size:14px;">Accept</button>
   </div>
 </div>

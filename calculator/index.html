@@ -36,7 +36,6 @@
     {"@type":"Question","name":"Does it work on mobile phones?","acceptedAnswer":{"@type":"Answer","text":"Yes, the calculator is fully responsive and touch-friendly."}}
   ]}
   </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3045520642994409" crossorigin="anonymous"></script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Scientific Calculator", "url": "https://muhammadyousafb396-byte.github.io/zaptools/calculator/", "description": "Free online scientific calculator with sin, cos, tan, log, square root, powers, π and more. Full keyboard support. No signup, works on mobile.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
 </head>
 <body>
@@ -66,7 +65,6 @@ ZapTools</a>
       </div>
       <p class="status" style="text-align:center">Tip: type on your keyboard — Enter = equals, Backspace = delete, Esc = clear.</p>
     </section>
-    <div class="ad-slot">Advertisement</div>
     <section class="prose">
       <h2>How to use the scientific calculator</h2>
       <p>Click the buttons or type directly with your keyboard. Trigonometric functions use <strong>radians</strong>. Press <kbd>=</kbd> or Enter to evaluate the full expression shown on the display.</p>
@@ -104,7 +102,7 @@ ZapTools</a>
   function applyFn(f){
     if(f==="C"){expr="";render();return;}
     if(f==="back"){expr=expr.slice(0,-1);render();return;}
-    if(f==="eq"){try{var v=evaluate(expr);expr=String(+v.toFixed(10));}catch(e){expr="";disp.textContent="Error";setTimeout(render,900);return;}render();return;}
+    if(f==="eq"){try{var v=evaluate(expr);if(!isFinite(v))throw 0;expr=String(+v.toFixed(10));}catch(e){expr="";disp.textContent="Error";setTimeout(render,900);return;}render();return;}
     if(f==="pi"){expr+="PI";}else if(f==="e"){expr+="E";}
     else if(f==="sqrt"){expr+="sqrt(";}else if(f==="sq"){expr+="^2";}
     else if(f==="cube"){expr+="^3";}else if(f==="^"){expr+="^";}
@@ -135,10 +133,10 @@ ZapTools</a>
   render();
 })();
 </script>
-<!-- Cookie consent banner (AdSense policy compliance) -->
+<!-- Cookie consent banner -->
 <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#fff;padding:14px 20px;z-index:9999;font-size:14px;box-shadow:0 -2px 10px rgba(0,0,0,.3);font-family:inherit;">
   <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
-    <span>We use cookies for analytics and ads. <a href="../privacy.html" style="color:#7aa2ff;">Learn more</a></span>
+    <span>We use cookies for analytics. <a href="../privacy.html" style="color:#7aa2ff;">Learn more</a></span>
     <button onclick="acceptCookies()" style="background:#4f7cff;color:#fff;border:none;padding:8px 24px;border-radius:6px;cursor:pointer;font-weight:600;font-size:14px;">Accept</button>
   </div>
 </div>

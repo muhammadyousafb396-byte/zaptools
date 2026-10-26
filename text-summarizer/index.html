@@ -33,7 +33,6 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the summarizer work?","acceptedAnswer":{"@type":"Answer","text":"It is a smart extractive summarizer: it scores every sentence by keyword frequency and position, then keeps the top-scoring sentences in original order. Nothing is sent to a server."}},{"@type":"Question","name":"What does Simplify mode do?","acceptedAnswer":{"@type":"Answer","text":"It replaces formal or complex words with simpler everyday alternatives from a built-in dictionary and splits very long sentences."}},{"@type":"Question","name":"Is my text uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. All processing happens locally in your browser — your text never leaves your device."}},{"@type":"Question","name":"Can it rewrite like AI paraphrasers?","acceptedAnswer":{"@type":"Answer","text":"It improves and simplifies deterministically. For deep creative rewriting, use a large language model; this tool is best for fast, private summaries."}}]}
   </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3045520642994409" crossorigin="anonymous"></script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Text Summarizer & Rewriter", "url": "https://muhammadyousafb396-byte.github.io/zaptools/text-summarizer/", "description": "Free text summarizer: extract key sentences, simplify with plain words, or polish grammar — 100% private, runs in your browser.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
 </head>
 <body>
@@ -71,7 +70,6 @@ ZapTools</a>
       </div>
       <div class="result-box" id="tsStats" style="margin-top:14px">Stats will appear after processing…</div>
     </section>
-    <div class="ad-slot">Advertisement</div>
     <section class="prose">
       <h2>How it works</h2>
       <p>This is a <strong>smart extractive summarizer</strong> — it scores every sentence by keyword frequency and position in the text, then keeps the highest-scoring sentences in their original order. Nothing is uploaded: all processing happens in your browser.</p>
@@ -149,9 +147,7 @@ ZapTools</a>
     return out;
   }
   function improve(text){
-    var out=text.replace(/[ \t]+/g," ").replace(/\s+
-/g,"
-").trim();
+    var out=text.replace(/[ \t]+/g," ").replace(/\s+\n/g,"\n").trim();
     out=out.replace(/([.!?]\s+)([a-z])/g,function(m,p,c){return p+c.toUpperCase();});
     out=out.charAt(0).toUpperCase()+out.slice(1);
     out=out.replace(/\bi\b/g,"I").replace(/\s+([,.!?;:])/g,"$1");
@@ -188,10 +184,10 @@ ZapTools</a>
   });
 })();
 </script>
-<!-- Cookie consent banner (AdSense policy compliance) -->
+<!-- Cookie consent banner -->
 <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#fff;padding:14px 20px;z-index:9999;font-size:14px;box-shadow:0 -2px 10px rgba(0,0,0,.3);font-family:inherit;">
   <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
-    <span>We use cookies for analytics and ads. <a href="../privacy.html" style="color:#7aa2ff;">Learn more</a></span>
+    <span>We use cookies for analytics. <a href="../privacy.html" style="color:#7aa2ff;">Learn more</a></span>
     <button onclick="acceptCookies()" style="background:#4f7cff;color:#fff;border:none;padding:8px 24px;border-radius:6px;cursor:pointer;font-weight:600;font-size:14px;">Accept</button>
   </div>
 </div>

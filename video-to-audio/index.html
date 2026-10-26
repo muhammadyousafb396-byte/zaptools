@@ -36,7 +36,6 @@
     {"@type":"Question","name":"Why does the first conversion take a while?","acceptedAnswer":{"@type":"Answer","text":"The FFmpeg engine (~25MB) downloads once on first use and is then cached by your browser."}}
   ]}
   </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3045520642994409" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/@ffmpeg/ffmpeg@0.11.6/dist/ffmpeg.min.js"></script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Video to Audio", "url": "https://muhammadyousafb396-byte.github.io/zaptools/video-to-audio/", "description": "Extract audio from video files free. Upload MP4, WebM or MOV and download the soundtrack as MP3. Private — conversion happens in your browser.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
 </head>
@@ -70,14 +69,13 @@ ZapTools</a>
         <button class="btn btn-grad" id="dlBtn">⬇ Download MP3</button>
       </div>
     </section>
-    <div class="ad-slot">Advertisement</div>
     <section class="prose">
       <h2>How to extract audio from video</h2>
       <ol><li>Upload your video file above.</li><li>Choose MP3 quality and click <strong>Extract Audio</strong>.</li><li>Preview and download the MP3.</li></ol>
       <p><strong>Privacy note:</strong> conversion uses FFmpeg compiled to WebAssembly running locally. The ~25MB engine downloads once, then everything happens on your device — no server ever sees your video.</p>
     </section>
     <section class="faq"><h2 style="text-align:center;margin-bottom:16px">FAQs</h2><div class="prose">
-      <details><summary>Is video to audio conversion free?</summary><p>Yes, completely free with no limits on file count.</p></details>
+      <details><summary>Is video to audio conversion free?</summary><p>Yes, completely free with no limits on file count. Each file should stay under ~300 MB so the browser doesn't run out of memory.</p></details>
       <details><summary>Is my video uploaded to a server?</summary><p>No. Conversion runs in your browser with FFmpeg WebAssembly — your video never leaves your device.</p></details>
       <details><summary>Why does the first conversion take a while?</summary><p>The FFmpeg engine (~25MB) downloads once on first use and is then cached by your browser.</p></details>
     </div></section>
@@ -100,10 +98,14 @@ ZapTools</a>
   dz.addEventListener('dragover',function(e){e.preventDefault();});
   dz.addEventListener('drop',function(e){e.preventDefault();if(e.dataTransfer.files[0])setFile(e.dataTransfer.files[0]);});
   fi.addEventListener('change',function(){if(fi.files[0])setFile(fi.files[0]);});
-  function setFile(f){file=f;document.getElementById('convBtn').disabled=false;
+  function setFile(f){
+    if(!f.type.startsWith('video/')){document.getElementById('vaStatus').textContent='Please upload a video file.';file=null;document.getElementById('convBtn').disabled=true;return;}
+    if(f.size>300*1024*1024){document.getElementById('vaStatus').textContent='File too large for in-browser conversion ('+(f.size/1048576).toFixed(0)+' MB). Keep videos under ~300 MB — the browser runs out of memory on larger files.';file=null;document.getElementById('convBtn').disabled=true;return;}
+    file=f;document.getElementById('convBtn').disabled=false;
     document.getElementById('vaStatus').textContent='Selected: '+f.name+' ('+(f.size/1048576).toFixed(1)+' MB)';}
   document.getElementById('convBtn').addEventListener('click',async function(){
     if(!file)return;var st=document.getElementById('vaStatus'),pw=document.getElementById('progWrap'),pb=document.getElementById('progBar');
+    var btn=document.getElementById('convBtn');btn.disabled=true;
     try{
       if(!loaded){st.textContent='Loading audio engine (one-time ~25MB download)…';pw.style.display='block';
         ffmpeg=FFmpeg.createFFmpeg({log:false});
@@ -119,17 +121,18 @@ ZapTools</a>
       document.getElementById('dlWrap').style.display='block';
       st.textContent='✓ Done! Preview above or download your MP3.';pw.style.display='none';
       ffmpeg.FS('unlink','in_'+file.name);ffmpeg.FS('unlink','out.mp3');
-    }catch(err){st.textContent='Conversion failed: '+(err.message||'unknown error');pw.style.display='none';}
+    }catch(err){st.textContent='Conversion failed: '+(err.message||'unknown error')+'. The video codec may not be supported in-browser — try an MP4 (H.264) file under ~300 MB.';pw.style.display='none';}
+    btn.disabled=false;
   });
   document.getElementById('dlBtn').addEventListener('click',function(){
     if(mp3Url)downloadFile(mp3Url,(file?file.name.replace(/\.[^.]+$/,''):'audio')+'.mp3');
   });
 })();
 </script>
-<!-- Cookie consent banner (AdSense policy compliance) -->
+<!-- Cookie consent banner -->
 <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#fff;padding:14px 20px;z-index:9999;font-size:14px;box-shadow:0 -2px 10px rgba(0,0,0,.3);font-family:inherit;">
   <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
-    <span>We use cookies for analytics and ads. <a href="../privacy.html" style="color:#7aa2ff;">Learn more</a></span>
+    <span>We use cookies for analytics. <a href="../privacy.html" style="color:#7aa2ff;">Learn more</a></span>
     <button onclick="acceptCookies()" style="background:#4f7cff;color:#fff;border:none;padding:8px 24px;border-radius:6px;cursor:pointer;font-weight:600;font-size:14px;">Accept</button>
   </div>
 </div>
